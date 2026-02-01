@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "O’Neill Tensor Curvature Codes"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Bhattacharjee
+    given-names: Deep
+repository-code: "https://github.com/creelie/oneill-calabi-yau-curvature"
+license: MIT
+keywords:
+  - Calabi–Yau manifolds
+  - Riemannian submersions
+  - O’Neill tensors
+  - curvature decomposition
+abstract: >
+  Computational and numerical tools supporting the study of sectional
+  curvature structures in fibred Calabi–Yau manifolds using O’Neill’s
+  tensorial decomposition for Riemannian submersions.
