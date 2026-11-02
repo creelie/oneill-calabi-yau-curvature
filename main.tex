@@ -1,0 +1,503 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\scal}{\operatorname{scal}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Hol}{\operatorname{Hol}}
+\newcommand{\Isom}{\operatorname{Isom}}
+\newcommand{\hor}{\mathcal{H}}
+\newcommand{\ver}{\mathcal{V}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\lie}{\mathcal{L}}
+\newcommand{\bas}[1]{\widetilde{#1}}
+
+\raggedbottom
+\begin{document}
+
+\title{Vertical Ricci curvature of totally geodesic submersions}
+
+\author{Deep Bhattacharjee}
+\address{Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India}
+\address{Formerly, University of Calcutta (Heramba Chandra College), 23/49 Gariahat Road, Golpark, Kolkata 700029, West Bengal, India}
+\email{d.bhattacharjee@erl-forschung.de}
+\email{itsdeep@live.com}
+\email{egspl@proton.me \textup{(GitHub-related contact, \url{https://github.com/creelie})}}
+\urladdr{https://orcid.org/0000-0003-0466-750X}
+\thanks{Corresponding author: Deep Bhattacharjee, d.bhattacharjee@erl-forschung.de.}
+
+\subjclass[2020]{53C12; 53C20; 53C25; 53C29}
+\keywords{Riemannian submersion; totally geodesic fibre; Ricci curvature}
+
+\begin{abstract}
+A Riemannian submersion with compact totally geodesic fibres and nonpositive Ricci curvature on vertical vectors is locally a product.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+The Hopf fibration $S^3\to S^2$ is the model of a Riemannian submersion whose fibres are totally geodesic and whose horizontal distribution is not integrable: the fibres are great circles, and the fibration is not a product in any neighbourhood of any point. The non-integrability is measured by O'Neill's tensor $A$, and the twisting of the fibration is paid for by curvature. On the round $S^3$ the Ricci curvature in the direction of the fibres equals $2$, and O'Neill's formulas show that this positivity is forced: the mixed sectional curvatures of a submersion with totally geodesic fibres are the squared norms $|A_XU|^2$ \cite{ONeill1966}.\footnote{A submersion of a round sphere with totally geodesic fibres is, up to isometry, one of the Hopf fibrations $S^{2n+1}\to\CP^n$, $S^{4n+3}\to\mathbb{HP}^n$, $S^{15}\to S^8$ and their composites; this is the classification of Escobales \cite{Escobales1975} and Ranjan \cite{Ranjan1985}. By a Hopf-like fibration we mean a Riemannian submersion with totally geodesic fibres and $A\neq0$, the fibres being circles, spheres or other compact manifolds; the word is used in the author's earlier work \cite{Bhattacharjee2026Hopf}. General references for Riemannian submersions are \cite{Besse1987,FalcitelliIanusPastore2004,GromollWalschap2009}.}
+
+The question answered here is whether such a fibration can live on a manifold whose Ricci curvature is not positive along the fibres. The answer is no. The result is a dichotomy.
+
+\begin{theorem}\label{thm:main}
+Let $\pi\colon (M,g)\to (B,h)$ be a Riemannian submersion between connected manifolds whose fibres are compact, connected and totally geodesic. Suppose that
+\begin{equation}\label{eq:hyp}
+\Ric_g(U,U)\le 0\qquad\text{for every vertical vector }U\in TM.
+\end{equation}
+Then O'Neill's tensor $A$ vanishes identically: the horizontal distribution is integrable, both distributions are parallel, and $M$ is locally the Riemannian product of a fibre and an open subset of $B$.\footnote{Locally a product means that every point of $M$ has a neighbourhood isometric to $V\times W$ with $V$ open in a fibre and $W$ open in $B$, the submersion being the projection to $W$. The fibres are compact without boundary, since they are closed submanifolds of $M$ and $\pi$ is a submersion. Connectedness of the fibres is a convenience: without it, the conclusion holds for each component of each fibre, and the global statement holds for the submersion $M\to B'$, where $B'$ is the space of components of the fibres, which is a covering of $B$ when $M$ is complete, by Hermann's theorem \cite{Hermann1960}.} If $M$ is moreover complete, the universal cover $\bas M$ is isometric to $\bas F\times\bas B$, where $\bas F$ and $\bas B$ are the universal covers of a fibre $F$ and of $B$, and $\pi$ lifts to the projection onto the second factor followed by the universal covering of $B$.
+\end{theorem}
+
+Equivalently: \emph{a Riemannian submersion with compact totally geodesic fibres which is not locally a product has positive Ricci curvature on some vertical vector}. Hypothesis \eqref{eq:hyp} is needed only on vertical vectors, and the examples of Section~\ref{sec:examples} show that it cannot be replaced by a sign condition on the horizontal Ricci curvature or on the scalar curvature: the Heisenberg nilmanifold fibres over the two-torus with totally geodesic circles, has negative scalar curvature and negative Ricci curvature on every horizontal vector, and is not a local product.
+
+Theorem~\ref{thm:main} rests on an integral identity on one fibre. For $b\in B$ and $X,Y\in T_bB$, let $\bas X,\bas Y$ be their horizontal lifts along the fibre $F_b=\pi^{-1}(b)$, and let $\xi$ be the vertical vector field $p\mapsto A_{\bas X_p}\bas Y_p$ on $F_b$. We write $\nabla^F$ for the Levi-Civita connection of a fibre with its induced metric, and $X_1,\dots,X_n$ for an orthonormal basis of the horizontal space at a point.
+
+\begin{theorem}\label{thm:identity}
+Let $\pi\colon (M,g)\to(B,h)$ be a Riemannian submersion with compact totally geodesic fibres. Then for every $b\in B$ and $X,Y\in T_bB$ the field $\xi=A_{\bas X}\bas Y$ is a Killing field of the fibre $F_b$, and
+\begin{equation}\label{eq:identity}
+\int_{F_b}\Ric_g(\xi,\xi)\,d\vol_{F_b}=\int_{F_b}\Bigl(|\nabla^{F}\xi|^2+\sum_{i=1}^{n}|A_{X_i}\xi|^2\Bigr)d\vol_{F_b}.
+\end{equation}
+If $|X|=|Y|=1$, then $\sum_i|A_{X_i}\xi|^2\ge|\xi|^4$ pointwise, so that
+\begin{equation}\label{eq:quartic}
+\int_{F_b}|A_{\bas X}\bas Y|^4\,d\vol_{F_b}\le\int_{F_b}\Ric_g(\xi,\xi)\,d\vol_{F_b}.
+\end{equation}
+\end{theorem}
+
+The identity \eqref{eq:identity} involves neither completeness nor compactness of $M$. Its quantitative form bounds the twisting of the submersion by the vertical Ricci curvature.\footnote{When $M$ is Einstein and $T=0$, $|A|^2$ is constant, so the left side of \eqref{eq:average}, summed over an orthonormal basis $X,Y$ of $T_bB$ and multiplied by $2$, is $|A|^2$ evaluated on horizontal pairs; see Remark~\ref{rem:einstein}.}
+
+\begin{corollary}\label{cor:average}
+In the situation of Theorem~\ref{thm:identity}, let $\rho_b$ be the largest value of $\Ric_g(U,U)$ over the unit vertical vectors $U$ at points of $F_b$. Then for all unit vectors $X,Y\in T_bB$,
+\begin{equation}\label{eq:average}
+\frac{1}{\vol(F_b)}\int_{F_b}|A_{\bas X}\bas Y|^2\,d\vol_{F_b}\;\le\;\rho_b .
+\end{equation}
+\end{corollary}
+
+For the Hopf fibration of the unit three-sphere both sides of \eqref{eq:average} are attained with $|A_{\bas X}\bas Y|^2=1$ and $\rho_b=2$; for the Heisenberg nilmanifold the left side is $\tfrac14$ and the right side is $\tfrac12$ (Section~\ref{sec:examples}).
+
+The consequences for manifolds with special holonomy are immediate. By Yau's solution of the Calabi conjecture \cite{Yau1978} a compact K\"ahler manifold with vanishing first Chern class carries Ricci-flat metrics; the compact manifolds with holonomy $SU(n)$, $Sp(n)$, $G_2$ or $\mathrm{Spin}(7)$ are Ricci-flat, simply connected or finitely covered by simply connected ones, and irreducible \cite{Beauville1983,Joyce2000}.\footnote{These are the Ricci-flat entries of Berger's list \cite{Berger1955}: a simply connected complete irreducible non-symmetric Riemannian manifold has holonomy $SO(m)$, $U(n)$, $SU(n)$, $Sp(n)Sp(1)$, $Sp(n)$, $G_2$ or $\mathrm{Spin}(7)$, and the metric is Ricci-flat exactly in the cases $SU(n)$, $Sp(n)$, $G_2$ and $\mathrm{Spin}(7)$ \cite[Chapter 10]{Besse1987}, \cite[Chapter 3]{Joyce2000}. The holonomy group of the universal cover is the restricted holonomy group of $M$, which is the identity component of the holonomy group of $M$.}
+
+\begin{corollary}\label{cor:ricciflat}
+Let $(M,g)$ be a compact Ricci-flat manifold and $\pi\colon M\to B$ a Riemannian submersion with totally geodesic fibres. Then $A=0$, the fibres and the base are Ricci-flat, and $\bas M\cong\bas F\times\bas B$. If the restricted holonomy group of $g$ is irreducible, in particular if $(M,g)$ is a compact Calabi--Yau, hyperk\"ahler, $G_2$ or $\mathrm{Spin}(7)$ manifold with full holonomy, then $M$ admits no Riemannian submersion with totally geodesic fibres onto a manifold $B$ with $0<\dim B<\dim M$.
+\end{corollary}
+
+\begin{corollary}\label{cor:einstein}
+Let $(M,g)$ be a compact Einstein manifold with $\Ric_g=\lambda g$, $\lambda\le0$, and $\pi\colon M\to B$ a Riemannian submersion with totally geodesic fibres. Then $\pi$ is locally a Riemannian product, and the fibres and the base are Einstein with the same constant $\lambda$.
+\end{corollary}
+
+Fibrations of Calabi--Yau manifolds by tori, K3 surfaces and spheres are the geometric substrate of several constructions in string compactification, and the author's earlier work on Hopf-like fibrations, on O'Neill's decomposition for fibred Calabi--Yau manifolds and on the holonomy of such fibrations \cite{Bhattacharjee2026Hopf,Bhattacharjee2026ONeill,Bhattacharjee2026Holonomy,Bhattacharjee2026Toric} related the integral of $|A|^2$ over such a fibration to its vertical Ricci curvature and asked what a smooth compact Hopf-like structure costs in curvature. Theorem~\ref{thm:main} settles that question for totally geodesic fibres, in every dimension, with no hypothesis on the fibre, the base or the holonomy. The K\"ahler case needs no curvature at all: for a holomorphic Riemannian submersion between K\"ahler manifolds the horizontal distribution is always integrable, a fact due to Watson \cite{Watson1976} for which we include the three-line proof in Section~\ref{sec:kahler}. The content of Theorem~\ref{thm:main} lies in the non-holomorphic submersions, those with odd-dimensional fibres among them, which are exactly the ones a Hopf-like fibration requires.
+
+The proof has two steps. The first is a lemma on the vertical bracket of basic fields: when the fibres are totally geodesic, it restricts to a Killing field on every fibre. The second is Bochner's formula for Killing fields on the compact fibre, combined with O'Neill's expression for the mixed sectional curvatures. The hypothesis is used once, through the sign of one integral. Every formula from the theory of submersions and from the theory of Killing fields that the proof uses is derived from the definitions in the appendices, and the curvatures of the two examples are computed there.
+
+\section{Riemannian submersions}\label{sec:prelim}
+
+Throughout, $\pi\colon(M,g)\to(B,h)$ is a Riemannian submersion: $\pi$ is a smooth surjective submersion, and $d\pi$ restricts to an isometry from the orthogonal complement $\hor_p$ of $\ver_p=\ker d\pi_p$ onto $T_{\pi(p)}B$ at every $p\in M$. Vectors in $\ver$ are vertical, vectors in $\hor$ horizontal; $v$ and $h$ denote the two orthogonal projections. We write $n=\dim B$, $k=\dim M-n\ge1$, and $F_b=\pi^{-1}(b)$ for the fibre over $b\in B$, a closed submanifold of dimension $k$ with the induced metric $g_F$; $M$ and $B$ are connected, and the fibres are assumed connected wherever a global statement is made. The Levi-Civita connection of $g$ is $\nabla$, its curvature is $R(X,Y)Z=\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ-\nabla_{[X,Y]}Z$, the sectional curvature of a plane spanned by orthonormal $X,Y$ is $K(X,Y)=g(R(X,Y)Y,X)$, and $\Ric_g(X,X)$ is the sum of $K(X,E_i)$ over an orthonormal basis $E_i$ of $X^\perp$.\footnote{With this sign the unit sphere has $K=1$. The Ricci tensor is $\Ric(Y,Z)=\sum_ig(R(E_i,Y)Z,E_i)$ over an orthonormal basis $E_i$ of the whole tangent space, which agrees with the sum of sectional curvatures when $Y=Z$ is a unit vector; it is symmetric, and we also read it as an endomorphism through $g$. The conventions are those of \cite{KobayashiNomizu1963} and \cite{Petersen2016}.}
+
+O'Neill's tensors \cite{ONeill1966} are
+\begin{equation}
+T_EF=h\nabla_{vE}\,vF+v\nabla_{vE}\,hF,\qquad A_EF=v\nabla_{hE}\,hF+h\nabla_{hE}\,vF .
+\end{equation}
+For each $E$ the endomorphisms $T_E$ and $A_E$ are skew-symmetric and exchange $\ver$ and $\hor$; $T$ restricted to $\ver\times\ver$ is the second fundamental form of the fibres, so the fibres are totally geodesic precisely when $T=0$; and for horizontal $X,Y$ one has
+\begin{equation}\label{eq:Abracket}
+A_XY=\tfrac12\,v[X,Y],
+\end{equation}
+so that $A$ restricted to $\hor\times\hor$ is skew and vanishes precisely when $\hor$ is integrable.\footnote{These are O'Neill's Lemmas 1--3 \cite{ONeill1966}, \cite[9.21--9.24]{Besse1987}; they are derived from the definitions in Appendix~\ref{app:oneill}, Lemmas \ref{lem:appskew}--\ref{lem:appA}. The tensor $T$ was introduced by O'Neill, the tensor $A$ by O'Neill and, in the almost product setting, by Gray; Vilms \cite{Vilms1970} proved that a submersion with totally geodesic fibres and complete total space is a fibre bundle with structure group the isometry group of the fibre, a form of Hermann's theorem.}
+
+A horizontal vector field $\bas X$ on $M$ is \emph{basic} if it is $\pi$-related to a vector field $X$ on $B$; every vector field on $B$ has a unique basic lift.\footnote{At $p\in M$ the basic lift is $d\pi_p^{-1}(X_{\pi(p)})\in\hor_p$, which is smooth in $p$ because $d\pi|_{\hor}$ is an isomorphism of bundles over $\pi$. Every horizontal vector at a point is the value of a basic field, so identities tensorial in the horizontal argument need only be checked on basic fields.} If $\bas X$ is basic and $U$ is vertical, then $[\bas X,U]$ is vertical, because $d\pi[\bas X,U]=[X,0]=0$; and if $\bas X,\bas Y$ are basic, then $g(\bas X,\bas Y)=h(X,Y)\circ\pi$ is constant along the fibres and $h[\bas X,\bas Y]$ is the basic lift of $[X,Y]$. We use two curvature formulas of O'Neill, both valid when $T=0$.
+
+\begin{lemma}\label{lem:oneill}
+Suppose $T=0$. Let $U,V$ be vertical and $X$ horizontal at a point of a fibre $F$.
+\begin{enumerate}
+\item[(a)] $g(R(U,V)V,U)=g_F(R^{F}(U,V)V,U)$, where $R^F$ is the curvature of $(F,g_F)$.
+\item[(b)] $g(R(X,U)U,X)=|A_XU|^2$.
+\item[(c)] $\Ric_g(U,U)=\Ric_{g_F}(U,U)+\sum_{i=1}^{n}|A_{X_i}U|^2$ for an orthonormal basis $X_1,\dots,X_n$ of $\hor$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) is the Gauss equation for the totally geodesic submanifold $F$, Lemma~\ref{lem:appgauss}. (b) is O'Neill's formula for the curvature of a mixed plane, $g(R(X,U)U,X)=g((\nabla_XT)_UU,X)+|A_XU|^2-|T_UX|^2$ \cite[Theorem 2 and Corollary 1]{ONeill1966}, \cite[9.28]{Besse1987}, with $T=0$; it is derived in this form in Lemma~\ref{lem:appmixed}. For (c), take an orthonormal basis of $T_pM$ consisting of $X_1,\dots,X_n$ and an orthonormal basis $U_1,\dots,U_k$ of $\ver_p$; then
+\[
+\Ric_g(U,U)=\sum_{j=1}^{k}g(R(U_j,U)U,U_j)+\sum_{i=1}^{n} g(R(X_i,U)U,X_i),
+\]
+and the two sums are $\Ric_{g_F}(U,U)$ by (a) and $\sum_i|A_{X_i}U|^2$ by (b).
+\end{proof}
+
+\section{The vertical bracket of basic fields is Killing}\label{sec:killing}
+
+\begin{lemma}\label{lem:flow}
+Let $\bas X$ be basic and $U,V$ vertical. Then
+\begin{equation}\label{eq:LXg}
+(\lie_{\bas X}g)(U,V)=-2\,g(T_UV,\bas X).
+\end{equation}
+In particular $T=0$ if and only if $\lie_{\bas X}g$ vanishes on $\ver\times\ver$ for every basic field $\bas X$.
+\end{lemma}
+
+\begin{proof}
+For any vector field $Z$ and vector fields $U,V$ one has $(\lie_Zg)(U,V)=g(\nabla_UZ,V)+g(U,\nabla_VZ)$ (Lemma~\ref{lem:applie}). Taking $Z=\bas X$ with $U,V$ vertical, the vertical part of $\nabla_U\bas X$ is $T_U\bas X$, so $g(\nabla_U\bas X,V)=g(T_U\bas X,V)=-g(\bas X,T_UV)$ by the skew-symmetry of $T_U$, and the same for the second term. Since $T_UV$ is horizontal and the basic fields span $\hor$ at every point, the vanishing of the right side of \eqref{eq:LXg} for all basic $\bas X$ is equivalent to $T=0$.
+\end{proof}
+
+Lemma~\ref{lem:flow} is the infinitesimal form of Hermann's theorem that the flows of basic fields map fibres isometrically onto fibres when the fibres are totally geodesic \cite{Hermann1960}.\footnote{Hermann proved that a Riemannian submersion with complete total space is a locally trivial fibre bundle, the local trivialisations being given by the flows of basic lifts of coordinate fields, and that when the fibres are totally geodesic these flows are isometries between fibres. We use only the infinitesimal statement \eqref{eq:LXg}, which needs no completeness.} The next lemma is the step on which everything rests.
+
+\begin{lemma}\label{lem:killing}
+Suppose $T=0$, and let $\bas X,\bas Y$ be basic fields. Then the vertical field
+\begin{equation}
+W=v[\bas X,\bas Y]=2A_{\bas X}\bas Y
+\end{equation}
+restricts, on every fibre $F$, to a Killing field of $(F,g_F)$.
+\end{lemma}
+
+\begin{proof}
+Let $U,V$ be vertical fields. By Lemma~\ref{lem:applie}, $\lie_{[\bas X,\bas Y]}=\lie_{\bas X}\lie_{\bas Y}-\lie_{\bas Y}\lie_{\bas X}$ on tensor fields, so
+\begin{equation}\label{eq:LLg}
+(\lie_{[\bas X,\bas Y]}g)(U,V)=(\lie_{\bas X}(\lie_{\bas Y}g))(U,V)-(\lie_{\bas Y}(\lie_{\bas X}g))(U,V).
+\end{equation}
+For a symmetric $2$-tensor $S$ one has $(\lie_{\bas X}S)(U,V)=\bas X(S(U,V))-S([\bas X,U],V)-S(U,[\bas X,V])$. Take $S=\lie_{\bas Y}g$. By Lemma~\ref{lem:flow} and $T=0$, $S$ vanishes on pairs of vertical vectors; since $U$, $V$, $[\bas X,U]$ and $[\bas X,V]$ are all vertical, every term vanishes, and the first term of \eqref{eq:LLg} is zero. The second vanishes for the same reason. Hence $\lie_{[\bas X,\bas Y]}g$ vanishes on $\ver\times\ver$. Now $[\bas X,\bas Y]=W+h[\bas X,\bas Y]$, and $h[\bas X,\bas Y]$ is basic, so $\lie_{h[\bas X,\bas Y]}g$ vanishes on $\ver\times\ver$ by Lemma~\ref{lem:flow} again. Therefore
+\begin{equation}
+(\lie_Wg)(U,V)=0\qquad\text{for all vertical }U,V.
+\end{equation}
+Finally, $W$ is tangent to every fibre $F$, and for vector fields $W,U,V$ tangent to $F$ the quantity $(\lie_Wg)(U,V)=W(g(U,V))-g([W,U],V)-g(U,[W,V])$ is computed inside $F$ and equals $(\lie_{W|_F}g_F)(U,V)$. So $W|_F$ is a Killing field of $(F,g_F)$.
+\end{proof}
+
+\begin{remark}
+Lemma~\ref{lem:killing} does not use completeness, compactness, or the dimension of the fibres. On a principal bundle with a connection it reduces to the statement that the curvature takes values in the Lie algebra of the structure group, here a group of isometries of the fibre; the proof above avoids the structure group altogether and applies to every totally geodesic submersion, whether or not it is a bundle in Hermann's sense.\footnote{For a principal $G$-bundle $P\to B$ with a connection, a $G$-invariant metric on $P$ for which the fibres are totally geodesic, and basic fields $\bas X,\bas Y$, the vertical part $v[\bas X,\bas Y]$ is the fundamental vector field of $-\Omega(\bas X,\bas Y)\in\mathfrak g$, where $\Omega$ is the curvature form \cite[Chapter II, Theorem 5.2]{KobayashiNomizu1963}; fundamental fields are Killing for the invariant metric. The lemma says that this Killing property survives without any group action.}
+\end{remark}
+
+\section{Proof of the theorems}\label{sec:proof}
+
+We recall Bochner's formula \cite{Bochner1946}. Let $(F,g_F)$ be a compact Riemannian manifold without boundary and $\xi$ a Killing field on $F$. Then $\nabla^F\xi$ is skew-symmetric and $\xi$ satisfies $\nabla^F_U\nabla^F_V\xi-\nabla^F_{\nabla^F_UV}\xi=R^F(U,\xi)V$ for all $U,V$ \cite{Kostant1955}, Lemma~\ref{lem:appkostant}; tracing over an orthonormal frame $e_j$ gives $\sum_j(\nabla^F)^2_{e_j,e_j}\xi=-\Ric_{g_F}(\xi)$, where $\Ric_{g_F}$ is read as an endomorphism, by \eqref{eq:apptrace}. Hence
+\begin{equation}\label{eq:bochner}
+\tfrac12\,\Delta|\xi|^2=|\nabla^F\xi|^2-\Ric_{g_F}(\xi,\xi),\qquad \Delta=\sum_j(\nabla^F)^2_{e_j,e_j},
+\end{equation}
+and integration over the compact $F$ gives
+\begin{equation}\label{eq:bochnerint}
+\int_F|\nabla^F\xi|^2\,d\vol_F=\int_F\Ric_{g_F}(\xi,\xi)\,d\vol_F .
+\end{equation}
+If $F$ is not connected, \eqref{eq:bochnerint} holds on each component and hence on $F$.\footnote{Formula \eqref{eq:bochner} is derived in Appendix~\ref{app:bochner}, and \eqref{eq:bochnerint} follows from the divergence theorem on the closed manifold $F$. Bochner's theorem \cite{Bochner1946}, \cite[Chapter II]{Kobayashi1972}, \cite{YanoBochner1953} is the case $\Ric_{g_F}\le0$: every Killing field is then parallel, and vanishes wherever $\Ric_{g_F}$ is negative definite. We only use the identity \eqref{eq:bochnerint}.}
+
+\begin{proof}[Proof of Theorem~\ref{thm:identity}]
+Fix $b\in B$ and $X,Y\in T_bB$, extend them to vector fields on $B$ and let $\bas X,\bas Y$ be the basic lifts. Along $F_b$ the field $\xi=A_{\bas X}\bas Y=\tfrac12 W$ depends only on $X$ and $Y$ at $b$, because $A$ is a tensor and $\bas X,\bas Y$ along $F_b$ are the horizontal lifts of $X,Y$. By Lemma~\ref{lem:killing}, $\xi$ is a Killing field of $(F_b,g_F)$. By Lemma~\ref{lem:oneill}(c), at every point of $F_b$,
+\begin{equation}
+\Ric_{g_F}(\xi,\xi)=\Ric_g(\xi,\xi)-\sum_{i=1}^n|A_{X_i}\xi|^2 .
+\end{equation}
+Substituting this into \eqref{eq:bochnerint} gives \eqref{eq:identity}.
+
+For \eqref{eq:quartic} let $|X|=|Y|=1$; then $|\bas X|=|\bas Y|=1$ along $F_b$. At a point $p\in F_b$ choose the orthonormal horizontal basis with $X_1=\bas X_p$. By the skew-symmetry of $A_{\bas X}$,
+\begin{equation}
+|\xi|^2=g(A_{\bas X}\bas Y,\xi)=-g(\bas Y,A_{\bas X}\xi)\le|A_{X_1}\xi|\le\Bigl(\sum_i|A_{X_i}\xi|^2\Bigr)^{1/2},
+\end{equation}
+so $\sum_i|A_{X_i}\xi|^2\ge|\xi|^4$, and \eqref{eq:quartic} follows from \eqref{eq:identity} by dropping the term $|\nabla^F\xi|^2\ge0$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:average}]
+By definition of $\rho_b$, $\Ric_g(\xi,\xi)\le\rho_b|\xi|^2$ on $F_b$. With \eqref{eq:quartic} and the Cauchy--Schwarz inequality,
+\begin{equation}
+\Bigl(\int_{F_b}|\xi|^2\Bigr)^2\le\vol(F_b)\int_{F_b}|\xi|^4\le\vol(F_b)\,\rho_b\int_{F_b}|\xi|^2 .
+\end{equation}
+If $\int_{F_b}|\xi|^2=0$ there is nothing to prove; otherwise divide by it.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $b\in B$ and let $X,Y\in T_bB$ be unit vectors. By \eqref{eq:hyp} the right side of \eqref{eq:quartic} is nonpositive, so $\int_{F_b}|\xi|^4=0$, and $\xi=A_{\bas X}\bas Y$, which is continuous, vanishes along $F_b$. Since $b$, $X$ and $Y$ were arbitrary and $A$ is bilinear on $\hor\times\hor$, $A$ vanishes on $\hor\times\hor$; by skew-symmetry of $A_X$ it then vanishes on $\hor\times\ver$ as well, so $A=0$.
+
+With $A=T=0$ the connection preserves both distributions: for horizontal $X,Y$ and vertical $U,V$ one has $\nabla_XY=h\nabla_XY+A_XY$, $\nabla_XU=v\nabla_XU+A_XU$, $\nabla_UX=h\nabla_UX+T_UX$ and $\nabla_UV=v\nabla_UV+T_UV$, so $\nabla_EY$ is horizontal and $\nabla_EU$ is vertical for every $E$. Thus $\hor$ and $\ver$ are parallel, hence integrable with totally geodesic leaves, and by the local de Rham theorem \cite{deRham1952}, \cite[Chapter IV, Proposition 5.2]{KobayashiNomizu1963}, $M$ is locally isometric to the product of a leaf of $\ver$, which is an open subset of a fibre, and a leaf of $\hor$.\footnote{The local theorem says: if $TM=\mathcal D_1\oplus\mathcal D_2$ is an orthogonal decomposition into parallel distributions, then every point has a neighbourhood isometric to a product $V_1\times V_2$ with $V_i$ an integral manifold of $\mathcal D_i$. The global theorem adds that a complete simply connected $M$ is isometric to the product of the maximal integral manifolds through any point. A parallel distribution is integrable because $[E,F]=\nabla_EF-\nabla_FE$ stays in it, and its leaves are totally geodesic because $\nabla_EF$ stays in it.} A leaf $L$ of $\hor$ is mapped by $\pi$ locally isometrically onto an open subset of $B$, so $M$ is locally the product of a fibre and an open subset of $B$, with $\pi$ the second projection.
+
+Suppose now that $M$ is complete, and let $q\colon\bas M\to M$ be the universal covering with the pulled-back metric. Then $\pi\circ q$ is a Riemannian submersion of the complete simply connected $\bas M$ with the same local structure, and the lifted distributions are parallel. By de Rham's decomposition theorem \cite{deRham1952}, $\bas M$ is isometric to $L_{\ver}\times L_{\hor}$, where $L_{\ver}$ and $L_{\hor}$ are the maximal integral manifolds through a point; both are complete, totally geodesic and simply connected. The leaf $L_{\hor}$ is complete and is mapped by $\pi\circ q$ as a local isometry to $B$, hence as a Riemannian covering, since a local isometry from a complete connected manifold to a connected manifold is a covering map \cite[Chapter IV, Theorem 4.6]{KobayashiNomizu1963}; so $L_{\hor}\cong\bas B$. The leaf $L_{\ver}$ is a connected component of $(\pi\circ q)^{-1}(b)$, which $q$ maps onto $F_b$ as a covering, so $L_{\ver}\cong\bas F$ for the fibre $F=F_b$. Under the isometry $\bas M\cong\bas F\times\bas B$ the map $\pi\circ q$ is the projection to $\bas B$ followed by the covering $\bas B\to B$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:ricciflat}]
+Hypothesis \eqref{eq:hyp} holds with equality, so Theorem~\ref{thm:main} gives $A=0$ and $\bas M\cong\bas F\times\bas B$. The fibres are Ricci-flat by Lemma~\ref{lem:oneill}(c), and since a Riemannian product has the Ricci curvature of its factors, $B$, which is locally isometric to a factor, is Ricci-flat. If $0<\dim B<\dim M$, the restricted holonomy group of $g$, which is the holonomy group of $\bas M$, preserves the orthogonal decomposition $T\bas M=T\bas F\oplus T\bas B$ into two subbundles of positive rank, so it is reducible. A compact manifold with holonomy $SU(n)$, $n\ge2$, $Sp(n)$, $G_2$ or $\mathrm{Spin}(7)$ has irreducible holonomy and finite fundamental group \cite{Beauville1983,Joyce2000}, and its restricted holonomy is the identity component, which is irreducible as well.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:einstein}]
+Hypothesis \eqref{eq:hyp} holds since $\lambda\le0$, so $A=0$ and $M$ is locally a product. Lemma~\ref{lem:oneill}(c) with $A=0$ gives $\Ric_{g_F}=\lambda g_F$ on the fibres, and $\Ric_h=\lambda h$ follows from the product structure as before.
+\end{proof}
+
+\begin{remark}\label{rem:general}
+Hypothesis \eqref{eq:hyp} enters the proof of Theorem~\ref{thm:main} only through the fields $\xi=A_{\bas X}\bas Y$. The conclusion $A=0$ therefore holds under the weaker assumption that $\Ric_g(\xi,\xi)\le0$ on the fibre $F_b$ for every $b$ and all $X,Y\in T_bB$, or even that $\int_{F_b}\Ric_g(\xi,\xi)\le0$ for all these fields. Compactness of $M$ was never used; compactness of the fibres was used in \eqref{eq:bochnerint}, and completeness of $M$ in the global splitting.
+\end{remark}
+
+\begin{remark}\label{rem:einstein}
+When $(M,g)$ is Einstein and $T=0$, $|A|^2$ is constant on $M$ \cite[p.~250]{Besse1987}. Corollary~\ref{cor:einstein} says that this constant is zero as soon as the Einstein constant is nonpositive; for a positive Einstein constant the Hopf fibrations of spheres and the twistor fibrations show that $A\neq0$ is possible, and Corollary~\ref{cor:average} bounds $|A|$ in terms of the constant.\footnote{The twistor space of a quaternion-K\"ahler manifold with positive scalar curvature carries a K\"ahler--Einstein metric for which the twistor fibration, with fibre $S^2$, is a Riemannian submersion with totally geodesic fibres and $A\neq0$ \cite[Chapter 14]{Besse1987}. Here the constancy of $|A|^2$ holds for every Einstein metric with $T=0$ by \cite[9.37]{Besse1987}; the proof there uses the horizontal part of O'Neill's formulas, which the present paper does not need.}
+\end{remark}
+
+\section{Examples}\label{sec:examples}
+
+\begin{example}[Hopf fibration]\label{ex:hopf}
+Let $S^3\subset\C^2$ be the unit sphere and $\pi\colon S^3\to S^2(\tfrac12)$ the Hopf fibration onto the sphere of radius $\tfrac12$ \cite{Hopf1931}.\footnote{The map is $(z,w)\mapsto(2z\bar w,\,|z|^2-|w|^2)\in\C\times\R$, whose image is the unit sphere; the metric on the base making $\pi$ a Riemannian submersion has curvature $4$, as O'Neill's formula $K_B(X,Y)=K(X,Y)+3|A_XY|^2=1+3$ for horizontal planes shows \cite[Corollary 1]{ONeill1966}, so the base is the sphere of radius $\tfrac12$. The computations of this example are carried out in Appendix~\ref{app:examples}.} Identify $S^3$ with $SU(2)$ and take the left-invariant orthonormal frame $X,Y,U$ with $[X,Y]=2U$, $[Y,U]=2X$, $[U,X]=2Y$; the fibres are the orbits of $U$, which are great circles, and $X,Y$ are basic. Then $\xi=A_{X}Y=\tfrac12v[X,Y]=U$ is a unit Killing field on each fibre, $\nabla^F\xi=0$, $\Ric_g(\xi,\xi)=2$, and $|A_XU|^2=|A_YU|^2=K(X,U)=1$. Identity \eqref{eq:identity} reads $2=0+2$, and \eqref{eq:average} reads $1\le2$.
+\end{example}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.96\linewidth]{fig_dichotomy.png}
+\caption{The dichotomy of Theorem~\ref{thm:main}. Left: the Hopf fibration, with the fibre $F_b$, two basic fields $\bas X,\bas Y$ along it and the vertical field $\xi=A_{\bas X}\bas Y$, a Killing field of the fibre; the twisting is paid for by the positive vertical Ricci curvature. Right: a totally geodesic submersion with nonpositive vertical Ricci curvature, which is locally the product of a fibre and the base. The figure is schematic.}
+\label{fig:dichotomy}
+\end{figure}
+
+\begin{example}[Heisenberg nilmanifold]\label{ex:heisenberg}
+Let $H$ be the three-dimensional Heisenberg group with the left-invariant metric for which a basis $e_1,e_2,e_3$ of its Lie algebra with $[e_1,e_2]=e_3$ is orthonormal, and let $M=\Gamma\backslash H$ be a compact quotient. The centre, generated by $e_3$, is a unit Killing field, so its orbits are geodesics, and $\pi\colon M\to T^2$, the quotient by the centre, is a Riemannian submersion with totally geodesic circle fibres. The curvature is computed in Appendix~\ref{app:examples}, in agreement with Milnor \cite{Milnor1976}:
+\begin{equation}\label{eq:heis}
+\Ric(e_1,e_1)=\Ric(e_2,e_2)=-\tfrac12,\quad\Ric(e_3,e_3)=\tfrac12,\quad \scal=-\tfrac12,\quad K(e_1,e_3)=K(e_2,e_3)=\tfrac14 .
+\end{equation}\footnote{The Heisenberg group is the group of upper triangular $3\times3$ matrices with unit diagonal, and $\Gamma$ can be taken to be the subgroup of integer matrices. The nilmanifold $\Gamma\backslash H$ is a circle bundle over the torus of Euler number one; Milnor \cite{Milnor1976} computed its curvature as the simplest example of a left-invariant metric whose Ricci curvature has both signs; here it is positive exactly on the fibre direction.}
+Here $\xi=A_{e_1}e_2=\tfrac12e_3$, so $|\xi|^2=\tfrac14$, $\Ric(\xi,\xi)=\tfrac18$ and $\sum_i|A_{e_i}\xi|^2=\tfrac14\bigl(K(e_1,e_3)+K(e_2,e_3)\bigr)=\tfrac18$; identity \eqref{eq:identity} reads $\tfrac18=0+\tfrac18$, and \eqref{eq:average} reads $\tfrac14\le\tfrac12$. The Ricci curvature is negative on every horizontal vector and the scalar curvature is negative, yet $A\neq0$: the sign condition of Theorem~\ref{thm:main} must be imposed on the vertical directions, and it cannot be replaced by a condition on the scalar curvature.
+\end{example}
+
+\begin{example}[Products]
+For a Riemannian product $F\times B\to B$ one has $A=T=0$, both sides of \eqref{eq:identity} vanish, and no condition on the curvature of $F$ is implied. Theorem~\ref{thm:main} is a rigidity statement: it is the twisting, not the fibre, that costs vertical Ricci curvature.\footnote{Every compact manifold is a totally geodesic fibre of such a product, so no condition on the fibre can come out of Theorem~\ref{thm:main}; the theorem is about $A$, and its content is the splitting $\bas M\cong\bas F\times\bas B$ with no assumption on the holonomy of $M$. Compare the splitting theorem of Cheeger and Gromoll \cite{CheegerGromoll1971}, which splits off lines under $\Ric\ge0$; here the curvature condition is of the opposite sign, and what splits is the fibre.}
+\end{example}
+
+\section{K\"ahler submersions}\label{sec:kahler}
+
+Let $(M,g,J)$ and $(B,h,J_B)$ be K\"ahler and let $\pi\colon M\to B$ be a holomorphic Riemannian submersion. Then $\ver$ and $\hor$ are $J$-invariant. Watson proved that $\hor$ is integrable \cite{Watson1976}; we give the proof.\footnote{Watson's theorem is stated for almost Hermitian submersions; the K\"ahler case is the one used here. Johnson \cite{Johnson1980} studied K\"ahler submersions further. The formula for $d\omega$ below is the invariant formula for the exterior derivative of a $2$-form, $d\omega(E_0,E_1,E_2)=\sum_i(-1)^iE_i\,\omega(\dots\widehat{E_i}\dots)+\sum_{i<j}(-1)^{i+j}\omega([E_i,E_j],\dots)$.} Let $\omega=g(J\cdot,\cdot)$ be the K\"ahler form, let $\bas X,\bas Y$ be basic and $U$ vertical. Then $\omega(\bas X,U)=\omega(\bas Y,U)=0$ because $J$ preserves $\hor$, $\omega(\bas X,\bas Y)=h(J_BX,Y)\circ\pi$ is constant along the fibres, and $[\bas X,U]$, $[\bas Y,U]$ are vertical. In the formula
+\begin{multline}
+0=d\omega(\bas X,\bas Y,U)=\bas X\,\omega(\bas Y,U)-\bas Y\,\omega(\bas X,U)+U\,\omega(\bas X,\bas Y)\\
+-\omega([\bas X,\bas Y],U)+\omega([\bas X,U],\bas Y)-\omega([\bas Y,U],\bas X)
+\end{multline}
+every term but the fourth vanishes, so $g(J[\bas X,\bas Y],U)=0$ for all vertical $U$. As $Jv[\bas X,\bas Y]$ is vertical and $Jh[\bas X,\bas Y]$ is horizontal, this says $Jv[\bas X,\bas Y]=0$, that is $A_{\bas X}\bas Y=0$.
+
+So a holomorphic Riemannian submersion between K\"ahler manifolds is locally a product as soon as its fibres are totally geodesic, with no curvature hypothesis. Hopf-like fibrations of a Calabi--Yau manifold are not holomorphic, their fibres being odd-dimensional spheres or circle bundles, and it is for these that Theorem~\ref{thm:main} is needed.
+
+\section{Questions}\label{sec:questions}
+
+The hypothesis that the fibres are totally geodesic is used twice: in Lemma~\ref{lem:killing}, and in Lemma~\ref{lem:oneill}, where the terms in $T$ drop out of O'Neill's formulas. Without it, the fibres of a compact Ricci-flat manifold need not be isometric to one another, and the vertical part of the bracket of basic fields need not be Killing.
+
+\begin{question}
+Does a compact Ricci-flat manifold admit a Riemannian submersion with $A\neq0$ and minimal fibres?
+\end{question}
+
+Fibrations of Calabi--Yau manifolds that occur in geometry, elliptic and Lagrangian fibrations among them, are not submersions; they have singular fibres. Theorem~\ref{thm:main} says nothing about them. A version for them would need an integral identity over the regular locus whose boundary terms are controlled by the singular fibres.
+
+\begin{question}
+Let $(M,g)$ be a compact Calabi--Yau manifold and $\pi\colon M\to B$ a surjective map whose regular fibres are totally geodesic for $g$. Is the restriction of $\pi$ to the regular locus locally a product?
+\end{question}
+
+\section*{Data availability}
+
+No data were generated. The two numerical checks of Section~\ref{sec:examples} are the classical curvature computations for the round three-sphere and for the Heisenberg group. The author used the AI system Claude Code (Anthropic) to check the curvature identities and to prepare the text; every proof was read and verified by the author.
+
+\section*{Declarations}
+
+\noindent\textit{Competing interests.} The author declares no competing interests.
+
+\noindent\textit{Funding.} No funding was received for this work.
+
+\appendix
+
+\section{O'Neill's tensors}\label{app:oneill}
+
+This appendix derives from the definitions every property of $T$ and $A$ used in the paper. Throughout, $\nabla$ is the Levi-Civita connection of $g$, so $\nabla g=0$ and $\nabla_EF-\nabla_FE=[E,F]$, and the Koszul formula holds:
+\begin{equation}\label{eq:koszul}
+2g(\nabla_EF,G)=E\,g(F,G)+F\,g(E,G)-G\,g(E,F)+g([E,F],G)-g([E,G],F)-g([F,G],E).
+\end{equation}
+
+\begin{lemma}\label{lem:appskew}
+For every vector field $E$, the endomorphisms $T_E$ and $A_E$ are skew-symmetric with respect to $g$, exchange $\ver$ and $\hor$, and depend only on the value of $E$ at each point. Moreover $T_E=T_{vE}$ and $A_E=A_{hE}$.
+\end{lemma}
+
+\begin{proof}
+The last two statements are the definitions. For $U$ vertical, $T_U$ sends a vertical $V$ to the horizontal vector $h\nabla_UV$ and a horizontal $X$ to the vertical vector $v\nabla_UX$; for $X$ horizontal, $A_X$ sends a horizontal $Y$ to $v\nabla_XY$ and a vertical $U$ to $h\nabla_XU$. Skew-symmetry: for $V$ vertical and $X$ horizontal, $g(V,X)=0$, so $0=U\,g(V,X)=g(\nabla_UV,X)+g(V,\nabla_UX)=g(T_UV,X)+g(V,T_UX)$; the pairs $(V,V')$ and $(X,X')$ give zero on both sides because $T_U$ exchanges the distributions. The same computation with $X$ in place of $U$ gives the skew-symmetry of $A_X$. Tensoriality in $E$ is clear from the definitions, and tensoriality in the second argument follows from $\nabla_E(fF)=f\nabla_EF+(Ef)F$ and the fact that the projections $v$, $h$ kill the extra term after projection to the complementary distribution.
+\end{proof}
+
+\begin{lemma}\label{lem:appT}
+$T_UV=T_VU$ for vertical $U,V$, and $T$ restricted to $\ver\times\ver$ is the second fundamental form of the fibres. In particular the fibres are totally geodesic if and only if $T=0$.
+\end{lemma}
+
+\begin{proof}
+The bracket of two vertical fields is vertical, because they are tangent to the fibres. So $T_UV-T_VU=h(\nabla_UV-\nabla_VU)=h[U,V]=0$. The induced connection of a fibre is $\nabla^F_UV=v\nabla_UV$, and the second fundamental form is $\nabla_UV-\nabla^F_UV=h\nabla_UV=T_UV$. If $T$ vanishes on $\ver\times\ver$ it vanishes on $\ver\times\hor$ as well, by skew-symmetry.
+\end{proof}
+
+\begin{lemma}\label{lem:appA}
+For horizontal $X,Y$ one has $A_XY=-A_YX=\tfrac12v[X,Y]$. Hence $A$ vanishes on $\hor\times\hor$ if and only if $\hor$ is integrable, and then, by skew-symmetry, $A=0$.
+\end{lemma}
+
+\begin{proof}
+Both sides are tensorial, so it suffices to take $X,Y$ basic. First $A_XX=0$: for $U$ vertical,
+\[
+g(\nabla_XX,U)=-g(X,\nabla_XU)=-g(X,\nabla_UX)-g(X,[X,U])=-\tfrac12U\,g(X,X)-0=0,
+\]
+because $[X,U]$ is vertical and $g(X,X)=h(d\pi X,d\pi X)\circ\pi$ is constant along the fibres. Polarising, $A_XY+A_YX=A_{X+Y}(X+Y)-A_XX-A_YY=0$. Then $2A_XY=A_XY-A_YX=v(\nabla_XY-\nabla_YX)=v[X,Y]$.
+\end{proof}
+
+\begin{lemma}[Gauss equation for the fibres]\label{lem:appgauss}
+Suppose $T=0$ and let $U,V,W$ be vector fields tangent to a fibre $F$. Then $R(U,V)W=R^F(U,V)W$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:appT}, $\nabla_UV=\nabla^F_UV$ for vertical fields when $T=0$. Then $\nabla_U\nabla_VW=\nabla^F_U\nabla^F_VW$ and $\nabla_{[U,V]}W=\nabla^F_{[U,V]}W$, and the two curvature tensors agree term by term.
+\end{proof}
+
+\begin{lemma}[mixed curvature]\label{lem:appmixed}
+Suppose $T=0$, let $X$ be horizontal and $U$ vertical. Then $g(R(X,U)U,X)=|A_XU|^2$.
+\end{lemma}
+
+\begin{proof}
+Extend $X$ to a basic field and $U$ to a vertical field. We use three facts: $\nabla_UU=v\nabla_UU$ is vertical, since $h\nabla_UU=T_UU=0$; $\nabla_XX=h\nabla_XX$ is horizontal, since $A_XX=0$; and $h\nabla_UX=A_XU$, because $\nabla_UX=\nabla_XU-[X,U]$ with $[X,U]$ vertical, so $h\nabla_UX=h\nabla_XU=A_XU$. Now
+\begin{align*}
+g(\nabla_X\nabla_UU,X)&=X\,g(\nabla_UU,X)-g(\nabla_UU,\nabla_XX)=0-0,\\
+g(\nabla_U\nabla_XU,X)&=U\,g(\nabla_XU,X)-g(\nabla_XU,\nabla_UX)=-|A_XU|^2,\\
+g(\nabla_{[X,U]}U,X)&=0,
+\end{align*}
+where in the second line $g(\nabla_XU,X)=g(A_XU,X)=-g(U,A_XX)=0$, and $g(\nabla_XU,\nabla_UX)=g(A_XU,A_XU)$ because $\nabla_UX$ is horizontal; in the third line $[X,U]$ is vertical, so $\nabla_{[X,U]}U$ is vertical. Hence $g(R(X,U)U,X)=0+|A_XU|^2-0$.
+\end{proof}
+
+\begin{lemma}\label{lem:applie}
+For vector fields $Z,U,V$ one has $(\lie_Zg)(U,V)=g(\nabla_UZ,V)+g(U,\nabla_VZ)$, and on tensor fields $\lie_{[Z,Z']}=\lie_Z\lie_{Z'}-\lie_{Z'}\lie_Z$.
+\end{lemma}
+
+\begin{proof}
+By definition $(\lie_Zg)(U,V)=Z\,g(U,V)-g([Z,U],V)-g(U,[Z,V])$. Write $Z\,g(U,V)=g(\nabla_ZU,V)+g(U,\nabla_ZV)$, $[Z,U]=\nabla_ZU-\nabla_UZ$ and $[Z,V]=\nabla_ZV-\nabla_VZ$; the first formula follows. For the second, both sides are derivations of the tensor algebra that commute with contractions; they agree on functions, $[Z,Z']f=ZZ'f-Z'Zf$, and on vector fields, by the Jacobi identity $[[Z,Z'],W]=[Z,[Z',W]]-[Z',[Z,W]]$; so they agree on all tensor fields.
+\end{proof}
+
+Lemma~\ref{lem:oneill} of the text is Lemma~\ref{lem:appgauss}, Lemma~\ref{lem:appmixed} and the trace of the two over an orthonormal basis. Lemma~\ref{lem:flow} and Lemma~\ref{lem:killing} use Lemma~\ref{lem:applie}.
+
+\section{Bochner's formula for Killing fields}\label{app:bochner}
+
+Let $(F,g_F)$ be a Riemannian manifold, $\nabla$ its Levi-Civita connection, and $\xi$ a Killing field, that is $\lie_\xi g_F=0$. By Lemma~\ref{lem:applie}, this means that $U\mapsto\nabla_U\xi$ is skew-symmetric. Write $\nabla^2_{U,V}\xi=\nabla_U\nabla_V\xi-\nabla_{\nabla_UV}\xi$; then $\nabla^2_{U,V}\xi-\nabla^2_{V,U}\xi=R(U,V)\xi$.
+
+\begin{lemma}[Kostant]\label{lem:appkostant}
+If $\xi$ is a Killing field, then $\nabla^2_{U,V}\xi=R(U,\xi)V$ for all $U,V$.
+\end{lemma}
+
+\begin{proof}
+Put $a(U,V,W)=g(\nabla^2_{U,V}\xi,W)$. Differentiating the skew-symmetry of $\nabla\xi$ gives
+\[
+a(U,V,W)=-a(U,W,V),
+\]
+and the Ricci identity gives
+\[
+a(U,V,W)-a(V,U,W)=g(R(U,V)\xi,W).
+\]
+Applying the two rules alternately,
+\begin{align*}
+a(U,V,W)&=-a(U,W,V)=-a(W,U,V)-g(R(U,W)\xi,V)=a(W,V,U)-g(R(U,W)\xi,V)\\
+&=a(V,W,U)+g(R(W,V)\xi,U)-g(R(U,W)\xi,V)\\
+&=-a(V,U,W)+g(R(W,V)\xi,U)-g(R(U,W)\xi,V)\\
+&=-a(U,V,W)+g(R(U,V)\xi,W)+g(R(W,V)\xi,U)-g(R(U,W)\xi,V).
+\end{align*}
+By the pair symmetry $g(R(E,F)G,H)=g(R(G,H)E,F)$ and the skew-symmetries of $R$, the last two terms are $g(R(\xi,U)W,V)$ and $-g(R(\xi,V)U,W)$, and by the first Bianchi identity $g(R(U,V)\xi,W)=-g(R(V,\xi)U,W)-g(R(\xi,U)V,W)$. Hence
+\begin{multline*}
+2a(U,V,W)=-g(R(V,\xi)U,W)-g(R(\xi,U)V,W)-g(R(\xi,U)V,W)-g(R(\xi,V)U,W)\\
+=-2g(R(\xi,U)V,W)=2g(R(U,\xi)V,W).\qedhere
+\end{multline*}
+\end{proof}
+
+Tracing over an orthonormal frame $e_j$ and using $\Ric(\xi,W)=\sum_jg(R(e_j,\xi)W,e_j)$,
+\begin{equation}\label{eq:apptrace}
+g\Bigl(\sum_j\nabla^2_{e_j,e_j}\xi,W\Bigr)=\sum_jg(R(e_j,\xi)e_j,W)=-\sum_jg(R(e_j,\xi)W,e_j)=-\Ric(\xi,W).
+\end{equation}
+For $f=\tfrac12|\xi|^2$ and $\Delta f=\sum_j(\nabla^2_{e_j,e_j}f)$ one has $\nabla_Uf=g(\nabla_U\xi,\xi)$ and $\nabla^2_{U,V}f=g(\nabla^2_{U,V}\xi,\xi)+g(\nabla_V\xi,\nabla_U\xi)$, so
+\begin{equation}\label{eq:appbochner}
+\tfrac12\Delta|\xi|^2=|\nabla\xi|^2-\Ric(\xi,\xi),
+\end{equation}
+which is \eqref{eq:bochner}. On a compact manifold without boundary $\int_F\Delta f=\int_F\operatorname{div}(\operatorname{grad}f)=0$ by the divergence theorem, and \eqref{eq:bochnerint} follows. If $\Ric\le0$ then $\nabla\xi=0$, and if $\Ric(\xi,\xi)<0$ somewhere then $\xi=0$ there and hence, being parallel, everywhere; this is Bochner's theorem, which the paper does not need.
+
+\section{The two examples}\label{app:examples}
+
+Let $G$ be a Lie group with a left-invariant metric and $e_1,\dots,e_m$ an orthonormal basis of left-invariant fields. The functions $g(e_i,e_j)$ are constant, so \eqref{eq:koszul} becomes
+\begin{equation}\label{eq:koszulli}
+2g(\nabla_{e_i}e_j,e_k)=g([e_i,e_j],e_k)-g([e_j,e_k],e_i)+g([e_k,e_i],e_j),
+\end{equation}
+and $R$ is computed from $\nabla$ by its definition, all fields being left-invariant.
+
+\subsection*{The Hopf fibration}
+Let $X,Y,U$ be orthonormal with $[X,Y]=2U$, $[Y,U]=2X$, $[U,X]=2Y$. The trilinear form $g([e_i,e_j],e_k)$ is then totally antisymmetric, so \eqref{eq:koszulli} gives $\nabla_{e_i}e_j=\tfrac12[e_i,e_j]$. For left-invariant fields,
+\[
+R(e_i,e_j)e_k=\tfrac14[e_i,[e_j,e_k]]-\tfrac14[e_j,[e_i,e_k]]-\tfrac12[[e_i,e_j],e_k]=-\tfrac14[[e_i,e_j],e_k]
+\]
+by the Jacobi identity, so $K(e_i,e_j)=\tfrac14|[e_i,e_j]|^2=1$ for every pair. This is the round metric of the unit sphere $S^3=SU(2)$, and $\Ric=2g$. The orbits of $U$ are the fibres of the Hopf map; they are geodesics because $\nabla_UU=0$. $U$ is a Killing field since $\nabla U$ is skew, $T=0$, and $X,Y$ are basic. From $\nabla_XY=U$ we get $A_XY=v\nabla_XY=U$, and from $\nabla_XU=\tfrac12[X,U]=-Y$ we get $A_XU=-Y$, $|A_XU|^2=1=K(X,U)$, in agreement with Lemma~\ref{lem:appmixed}; likewise $A_YU=X$. On a circle fibre $\nabla^F\xi=0$ for $\xi=U$, and $\Ric_g(\xi,\xi)=2=|A_XU|^2+|A_YU|^2$, which is \eqref{eq:identity}.
+
+\subsection*{The Heisenberg group}
+Let $e_1,e_2,e_3$ be orthonormal with $[e_1,e_2]=e_3$ and the other brackets zero. Formula \eqref{eq:koszulli} gives
+\[
+\nabla_{e_1}e_2=\tfrac12e_3,\quad \nabla_{e_2}e_1=-\tfrac12e_3,\quad \nabla_{e_1}e_3=\nabla_{e_3}e_1=-\tfrac12e_2,\quad \nabla_{e_2}e_3=\nabla_{e_3}e_2=\tfrac12e_1,
+\]
+and $\nabla_{e_i}e_i=0$. Then
+\begin{align*}
+R(e_1,e_2)e_2&=\nabla_{e_1}\nabla_{e_2}e_2-\nabla_{e_2}\nabla_{e_1}e_2-\nabla_{e_3}e_2=0-\tfrac12\nabla_{e_2}e_3-\tfrac12e_1=-\tfrac34e_1,\\
+R(e_1,e_3)e_3&=\nabla_{e_1}\nabla_{e_3}e_3-\nabla_{e_3}\nabla_{e_1}e_3-0=\tfrac12\nabla_{e_3}e_2=\tfrac14e_1,\\
+R(e_2,e_3)e_3&=-\nabla_{e_3}\nabla_{e_2}e_3=-\tfrac12\nabla_{e_3}e_1=\tfrac14e_2,
+\end{align*}
+so $K(e_1,e_2)=-\tfrac34$, $K(e_1,e_3)=K(e_2,e_3)=\tfrac14$, $\Ric(e_1,e_1)=\Ric(e_2,e_2)=-\tfrac12$, $\Ric(e_3,e_3)=\tfrac12$ and $\scal=-\tfrac12$, which is \eqref{eq:heis}. The field $e_3$ is Killing, since $g(\nabla_{e_1}e_3,e_2)+g(e_1,\nabla_{e_2}e_3)=-\tfrac12+\tfrac12=0$ and the other components of $\nabla e_3$ vanish, and $\nabla_{e_3}e_3=0$, so its orbits are geodesics. The submersion $\pi\colon H\to H/Z$ onto the quotient by the centre $Z=\exp(\R e_3)$ has these orbits as fibres, $T=0$, and $e_1,e_2$ basic; the metric on $H/Z\cong\R^2$ is flat since $[e_1,e_2]$ projects to zero. Here $A_{e_1}e_2=v\nabla_{e_1}e_2=\tfrac12e_3$ and $A_{e_1}e_3=h\nabla_{e_1}e_3=-\tfrac12e_2$, $A_{e_2}e_3=\tfrac12e_1$, so $|A_{e_1}e_3|^2=|A_{e_2}e_3|^2=\tfrac14=K(e_1,e_3)$, again as in Lemma~\ref{lem:appmixed}. A lattice $\Gamma\subset H$, for instance the matrices with integer entries, acts by isometries, $\Gamma\cap Z$ is a lattice in $Z$, and $\pi$ descends to a Riemannian submersion $\Gamma\backslash H\to(\Gamma\cap Z)\backslash H/Z$, whose base is a flat two-torus and whose fibres are circles. Everything above is left-invariant and passes to the quotient.
+
+
+\begin{thebibliography}{99}\raggedright
+
+\bibitem{ONeill1966} B. O'Neill, The fundamental equations of a submersion, Michigan Math. J. \textbf{13} (1966) 459--469. \href{https://doi.org/10.1307/mmj/1028999604}{doi:10.1307/mmj/1028999604}
+
+\bibitem{Hermann1960} R. Hermann, A sufficient condition that a mapping of Riemannian manifolds be a fibre bundle, Proc. Amer. Math. Soc. \textbf{11} (1960) 236--242. \href{https://doi.org/10.1090/S0002-9939-1960-0112151-4}{doi:10.1090/S0002-9939-1960-0112151-4}
+
+\bibitem{Besse1987} A. L. Besse, Einstein Manifolds, Ergebnisse der Mathematik und ihrer Grenzgebiete (3) \textbf{10}, Springer, Berlin, 1987. \href{https://doi.org/10.1007/978-3-540-74311-8}{doi:10.1007/978-3-540-74311-8}
+
+\bibitem{Bochner1946} S. Bochner, Vector fields and Ricci curvature, Bull. Amer. Math. Soc. \textbf{52} (1946) 776--797. \href{https://doi.org/10.1090/S0002-9904-1946-08647-4}{doi:10.1090/S0002-9904-1946-08647-4}
+
+\bibitem{Kostant1955} B. Kostant, Holonomy and the Lie algebra of infinitesimal motions of a Riemannian manifold, Trans. Amer. Math. Soc. \textbf{80} (1955) 528--542. \href{https://doi.org/10.1090/S0002-9947-1955-0084825-8}{doi:10.1090/S0002-9947-1955-0084825-8}
+
+\bibitem{Watson1976} B. Watson, Almost Hermitian submersions, J. Differential Geom. \textbf{11} (1976) 147--165. \href{https://doi.org/10.4310/jdg/1214433303}{doi:10.4310/jdg/1214433303}
+
+\bibitem{Milnor1976} J. Milnor, Curvatures of left invariant metrics on Lie groups, Adv. Math. \textbf{21} (1976) 293--329. \href{https://doi.org/10.1016/S0001-8708(76)80002-3}{doi:10.1016/S0001-8708(76)80002-3}
+
+\bibitem{deRham1952} G. de Rham, Sur la r\'eductibilit\'e d'un espace de Riemann, Comment. Math. Helv. \textbf{26} (1952) 328--344. \href{https://doi.org/10.1007/BF02564308}{doi:10.1007/BF02564308}
+
+\bibitem{Hopf1931} H. Hopf, \"Uber die Abbildungen der dreidimensionalen Sph\"are auf die Kugelfl\"ache, Math. Ann. \textbf{104} (1931) 637--665. \href{https://doi.org/10.1007/BF01457962}{doi:10.1007/BF01457962}
+
+\bibitem{Yau1978} S.-T. Yau, On the Ricci curvature of a compact K\"ahler manifold and the complex Monge--Amp\`ere equation, I, Comm. Pure Appl. Math. \textbf{31} (1978) 339--411. \href{https://doi.org/10.1002/cpa.3160310304}{doi:10.1002/cpa.3160310304}
+
+\bibitem{Beauville1983} A. Beauville, Vari\'et\'es K\"ahleriennes dont la premi\`ere classe de Chern est nulle, J. Differential Geom. \textbf{18} (1983) 755--782. \href{https://doi.org/10.4310/jdg/1214438181}{doi:10.4310/jdg/1214438181}
+
+\bibitem{KobayashiNomizu1963} S. Kobayashi and K. Nomizu, Foundations of Differential Geometry, Vol. I, Interscience, New York, 1963.
+
+\bibitem{Joyce2000} D. D. Joyce, Compact Manifolds with Special Holonomy, Oxford Mathematical Monographs, Oxford University Press, Oxford, 2000.
+
+\bibitem{Bhattacharjee2026Hopf} D. Bhattacharjee, O. Frederick, R. Sadhu, S. Bhattacharjee, S. Bhattacharya, S. N. Thakur, P. Samal, P. Nandi, T. Bhattacharjee, S. Singha Roy, R. Ghora and R. Patra, Hopf-like fibrations on Calabi--Yau manifolds, Preprints.org (2026). \href{https://doi.org/10.20944/preprints202504.2581.v4}{doi:10.20944/preprints202504.2581.v4}
+
+\bibitem{Bhattacharjee2026ONeill} D. Bhattacharjee, O'Neill tensor bounds for Riemannian submersions in fibred Calabi--Yau manifolds, Preprints.org (2026). \href{https://doi.org/10.20944/preprints202602.0125.v1}{doi:10.20944/preprints202602.0125.v1}
+
+\bibitem{Bhattacharjee2026Holonomy} D. Bhattacharjee, S. N. Thakur, S. Bhattacharya and P. Samal, $SU(n)$ holonomy deviations in Calabi--Yau manifolds (CY1--CY4), Preprints.org (2026). \href{https://doi.org/10.20944/preprints202602.0023.v1}{doi:10.20944/preprints202602.0023.v1}
+
+\bibitem{Bhattacharjee2026Toric} D. Bhattacharjee, S. Singha Roy and P. Nandi, Hodge--toric geometry beyond CY20, Int. J. Prof. Stud. \textbf{21} (2026) 271--918. \href{https://doi.org/10.37648/ijps.v21i01.019}{doi:10.37648/ijps.v21i01.019}
+
+\bibitem{Escobales1975} R. H. Escobales, Riemannian submersions with totally geodesic fibers, J. Differential Geom. \textbf{10} (1975) 253--276. \href{https://doi.org/10.4310/jdg/1214432793}{doi:10.4310/jdg/1214432793}
+
+\bibitem{Ranjan1985} A. Ranjan, Riemannian submersions of spheres with totally geodesic fibres, Osaka J. Math. \textbf{22} (1985) 243--260. \href{https://doi.org/10.18910/11284}{doi:10.18910/11284}
+
+\bibitem{FalcitelliIanusPastore2004} M. Falcitelli, S. Ianus and A. M. Pastore, Riemannian Submersions and Related Topics, World Scientific, Singapore, 2004. \href{https://doi.org/10.1142/5568}{doi:10.1142/5568}
+
+\bibitem{GromollWalschap2009} D. Gromoll and G. Walschap, Metric Foliations and Curvature, Progress in Mathematics \textbf{268}, Birkh\"auser, Basel, 2009. \href{https://doi.org/10.1007/978-3-7643-8715-0}{doi:10.1007/978-3-7643-8715-0}
+
+\bibitem{Vilms1970} J. Vilms, Totally geodesic maps, J. Differential Geom. \textbf{4} (1970) 73--79. \href{https://doi.org/10.4310/jdg/1214429276}{doi:10.4310/jdg/1214429276}
+
+\bibitem{Johnson1980} D. L. Johnson, K\"ahler submersions and holomorphic connections, J. Differential Geom. \textbf{15} (1980) 71--79. \href{https://doi.org/10.4310/jdg/1214435384}{doi:10.4310/jdg/1214435384}
+
+\bibitem{Berger1955} M. Berger, Sur les groupes d'holonomie homog\`ene des vari\'et\'es \`a connexion affine et des vari\'et\'es riemanniennes, Bull. Soc. Math. France \textbf{83} (1955) 279--330. \href{https://doi.org/10.24033/bsmf.1464}{doi:10.24033/bsmf.1464}
+
+\bibitem{Kobayashi1972} S. Kobayashi, Transformation Groups in Differential Geometry, Ergebnisse der Mathematik und ihrer Grenzgebiete \textbf{70}, Springer, Berlin, 1972. \href{https://doi.org/10.1007/978-3-642-61981-6}{doi:10.1007/978-3-642-61981-6}
+
+\bibitem{YanoBochner1953} K. Yano and S. Bochner, Curvature and Betti Numbers, Annals of Mathematics Studies \textbf{32}, Princeton University Press, Princeton, 1953. \href{https://doi.org/10.1515/9781400882205}{doi:10.1515/9781400882205}
+
+\bibitem{CheegerGromoll1971} J. Cheeger and D. Gromoll, The splitting theorem for manifolds of nonnegative Ricci curvature, J. Differential Geom. \textbf{6} (1971) 119--128. \href{https://doi.org/10.4310/jdg/1214430220}{doi:10.4310/jdg/1214430220}
+
+\bibitem{Petersen2016} P. Petersen, Riemannian Geometry, third edition, Graduate Texts in Mathematics \textbf{171}, Springer, Cham, 2016. \href{https://doi.org/10.1007/978-3-319-26654-1}{doi:10.1007/978-3-319-26654-1}
+
+\end{thebibliography}
+
+\end{document}
