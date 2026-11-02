@@ -1,0 +1,29 @@
+name: release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag of the release (for example v2.0.0)
+        required: true
+      title:
+        description: Title of the release
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          cat > notes.md <<'EOF'
+          Paper by Deep Bhattacharjee (sole author): Vertical Ricci curvature of totally geodesic submersions.
+          Source (main.tex), figure script (anc/fig_dichotomy.py) and build workflow.
+          GitHub-related contact: egspl@proton.me
+          EOF
+          gh release create "${{ inputs.tag }}" --target master --title "${{ inputs.title }}" --notes-file notes.md
+        env:
+          GH_TOKEN: ${{ github.token }}
