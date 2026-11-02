@@ -1,18 +1,21 @@
 cff-version: 1.2.0
-title: "O’Neill Tensor Curvature Codes"
-message: "If you use this software, please cite it as below."
+message: "If you use this work, please cite it as below."
+title: "Vertical Ricci curvature of totally geodesic submersions"
 type: software
 authors:
   - family-names: Bhattacharjee
     given-names: Deep
+    orcid: "https://orcid.org/0000-0003-0466-750X"
+    affiliation: "Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta (Heramba Chandra College), 23/49 Gariahat Road, Golpark, Kolkata 700029, West Bengal, India"
+    email: d.bhattacharjee@erl-forschung.de
 repository-code: "https://github.com/creelie/oneill-calabi-yau-curvature"
 license: MIT
 keywords:
-  - Calabi–Yau manifolds
-  - Riemannian submersions
-  - O’Neill tensors
-  - curvature decomposition
+  - Riemannian submersion
+  - totally geodesic fibre
+  - Ricci curvature
 abstract: >
-  Computational and numerical tools supporting the study of sectional
-  curvature structures in fibred Calabi–Yau manifolds using O’Neill’s
-  tensorial decomposition for Riemannian submersions.
+  LaTeX source and figure script of the paper "Vertical Ricci curvature of
+  totally geodesic submersions": a Riemannian submersion with compact totally
+  geodesic fibres and nonpositive Ricci curvature on vertical vectors is
+  locally a product.

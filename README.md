@@ -1,36 +1,34 @@
-# O’Neill Tensor Curvature Codes
+# Vertical Ricci curvature of totally geodesic submersions
 
-This repository provides computational and numerical tools accompanying the
-monograph and associated preprints on sectional curvature structures in
-fibred Calabi–Yau manifolds, developed using the theory of Riemannian
-submersions and O’Neill’s tensorial curvature decomposition.
+Deep Bhattacharjee
 
-The codes support the analysis of horizontal–vertical curvature interactions,
-mixed sectional curvature phenomena, and curvature bounds in Ricci-flat
-settings arising from nontrivial fibration geometry.
+This repository holds the LaTeX source of the paper *Vertical Ricci curvature of totally geodesic submersions* and the script that draws its figure.
 
-## Associated Work
-These codes accompany the preprint/monograph:
+**Theorem.** Let π: (M, g) → (B, h) be a Riemannian submersion whose fibres are compact, connected and totally geodesic, and suppose that the Ricci curvature of g is nonpositive on every vertical vector. Then O'Neill's tensor A vanishes, so M is locally the Riemannian product of a fibre and the base; if M is complete, its universal cover is the product of the universal covers of a fibre and of B.
 
-**Submersion Bounds on Fibred Calabi–Yau Geometry via O’Neill Tensors**
+The proof rests on the fact that, when the fibres are totally geodesic, the vertical part of the bracket of two basic fields restricts to a Killing field of every fibre, and on Bochner's formula for Killing fields on the compact fibre. Consequences: a compact Ricci-flat manifold admits no Riemannian submersion with totally geodesic fibres other than a local product, so compact Calabi–Yau, hyperkähler, G2 and Spin(7) manifolds with irreducible holonomy carry no such submersion onto a lower-dimensional base; the same holds for compact Einstein manifolds with nonpositive Einstein constant; and in general the fibre average of |A_X Y|^2 is bounded by the largest vertical Ricci curvature. Every formula used from the theory of submersions and of Killing fields is derived from the definitions in the appendices, and the curvatures of the Hopf fibration and of the Heisenberg nilmanifold are computed there.
 
-which develops a systematic curvature decomposition framework for elliptic,
-toroidal, and K3-fibred Calabi–Yau manifolds, with applications to geometric
-analysis and string-theoretic compactifications.
+## Layout
 
-## Scope
-The repository supports analytical and computational investigations of:
-- O’Neill \(A\)- and \(T\)-tensors and their norms
-- Horizontal, vertical, and mixed sectional curvature components
-- Curvature bounds and stability under collapsing limits
-- Applications to moduli space geometry and related physical models
+- `main.tex` — the paper (amsart, single column; MSC 2020: 53C12, 53C20, 53C25, 53C29).
+- `anc/fig_dichotomy.py` — draws `fig_dichotomy.png` (matplotlib, 200 dpi); run it in the repository root before compiling.
+- `.github/workflows/build.yml` — draws the figure and compiles `main.pdf` with `latexmk -pdf`.
 
-## Repository Structure
-- `src/` — core geometric and tensorial routines
-- `numerics/` — numerical curvature and tensor computations
-- `ml/` — machine-learning–assisted curvature estimation
-- `data/` — auxiliary datasets and geometric inputs
-- `examples/` — illustrative examples and test cases
+## Build
+
+```
+python3 anc/fig_dichotomy.py
+latexmk -pdf main.tex
+```
+
+## Citation
+
+See `CITATION.cff`. The Zenodo DOI of each release is recorded in the paper's data availability section.
+
+## Contact
+
+d.bhattacharjee@erl-forschung.de (corresponding), itsdeep@live.com; GitHub-related contact egspl@proton.me (https://github.com/creelie).
 
 ## License
-MIT License.
+
+MIT, see `LICENSE`.

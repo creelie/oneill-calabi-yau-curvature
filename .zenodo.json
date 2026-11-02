@@ -1,0 +1,20 @@
+{
+  "title": "Vertical Ricci curvature of totally geodesic submersions",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "LaTeX source and figure script of the paper Vertical Ricci curvature of totally geodesic submersions. A Riemannian submersion with compact, connected, totally geodesic fibres and nonpositive Ricci curvature on vertical vectors has vanishing O'Neill tensor A and is locally a Riemannian product; a complete total space has universal cover the product of the universal covers of a fibre and the base. Compact Ricci-flat manifolds, in particular Calabi-Yau, hyperkahler, G2 and Spin(7) manifolds with irreducible holonomy, admit no such submersion onto a lower-dimensional base. The proof shows that the vertical bracket of basic fields is a Killing field of each fibre and applies Bochner's formula; the appendices derive every formula used and compute the Hopf and Heisenberg examples.",
+  "creators": [
+    {
+      "name": "Bhattacharjee, Deep",
+      "affiliation": "Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta (Heramba Chandra College), 23/49 Gariahat Road, Golpark, Kolkata 700029, West Bengal, India",
+      "orcid": "0000-0003-0466-750X"
+    }
+  ],
+  "keywords": [
+    "Riemannian submersion",
+    "totally geodesic fibre",
+    "Ricci curvature"
+  ],
+  "license": "MIT",
+  "access_right": "open"
+}

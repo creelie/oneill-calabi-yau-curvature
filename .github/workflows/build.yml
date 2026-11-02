@@ -1,0 +1,32 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy matplotlib
+      - run: python3 anc/fig_dichotomy.py
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern latexmk
+      - run: latexmk -pdf -interaction=nonstopmode main.tex
+      - name: Check the build
+        run: |
+          grep -c 'Overfull\|Underfull' main.log && exit 1 || true
+          ! grep -qi 'undefined' main.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper
+          path: |
+            main.pdf
+            fig_dichotomy.png
