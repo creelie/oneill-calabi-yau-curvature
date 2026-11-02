@@ -2,6 +2,16 @@ cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
 title: "Vertical Ricci curvature of totally geodesic submersions"
 type: software
+version: 2.0.0
+date-released: 2026-11-02
+doi: 10.5281/zenodo.23875228
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23875228
+    description: Version DOI of release v2.0.0
+  - type: doi
+    value: 10.5281/zenodo.23875227
+    description: Concept DOI of all versions
 authors:
   - family-names: Bhattacharjee
     given-names: Deep

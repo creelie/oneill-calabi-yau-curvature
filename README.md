@@ -13,6 +13,7 @@ The proof rests on the fact that, when the fibres are totally geodesic, the vert
 - `main.tex` — the paper (amsart, single column; MSC 2020: 53C12, 53C20, 53C25, 53C29).
 - `anc/fig_dichotomy.py` — draws `fig_dichotomy.png` (matplotlib, 200 dpi); run it in the repository root before compiling.
 - `.github/workflows/build.yml` — draws the figure and compiles `main.pdf` with `latexmk -pdf`.
+- `.github/workflows/release.yml` — publishes a release from a tag and title.
 
 ## Build
 
@@ -21,9 +22,18 @@ python3 anc/fig_dichotomy.py
 latexmk -pdf main.tex
 ```
 
+## Releases
+
+| Release | Zenodo DOI |
+| --- | --- |
+| v2.0.0 (the paper) | [10.5281/zenodo.23875228](https://doi.org/10.5281/zenodo.23875228) |
+| all versions (concept DOI) | [10.5281/zenodo.23875227](https://doi.org/10.5281/zenodo.23875227) |
+
+Release v1.0.0 (February 2026) predates the paper and has no Zenodo record.
+
 ## Citation
 
-See `CITATION.cff`. The Zenodo DOI of each release is recorded in the paper's data availability section.
+See `CITATION.cff`. The DOI of the release is also recorded in the paper's data availability section.
 
 ## Contact
 
