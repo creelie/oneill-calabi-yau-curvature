@@ -26,7 +26,8 @@ latexmk -pdf main.tex
 
 | Release | Zenodo DOI |
 | --- | --- |
-| v2.0.0 (the paper) | [10.5281/zenodo.23875228](https://doi.org/10.5281/zenodo.23875228) |
+| v2.1.0 (the paper, corrected averaged bound) | [10.5281/zenodo.23875735](https://doi.org/10.5281/zenodo.23875735) |
+| v2.0.0 (first release of the paper) | [10.5281/zenodo.23875228](https://doi.org/10.5281/zenodo.23875228) |
 | all versions (concept DOI) | [10.5281/zenodo.23875227](https://doi.org/10.5281/zenodo.23875227) |
 
 Release v1.0.0 (February 2026) predates the paper and has no Zenodo record.
