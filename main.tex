@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[a4paper,margin=0.95in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -79,24 +79,25 @@ Let $\pi\colon (M,g)\to(B,h)$ be a Riemannian submersion with compact totally ge
 \begin{equation}\label{eq:identity}
 \int_{F_b}\Ric_g(\xi,\xi)\,d\vol_{F_b}=\int_{F_b}\Bigl(|\nabla^{F}\xi|^2+\sum_{i=1}^{n}|A_{X_i}\xi|^2\Bigr)d\vol_{F_b}.
 \end{equation}
-If $|X|=|Y|=1$, then $\sum_i|A_{X_i}\xi|^2\ge|\xi|^4$ pointwise, so that
+If $X,Y$ are orthonormal, then $\sum_i|A_{X_i}\xi|^2\ge2|\xi|^4$ pointwise, so that
 \begin{equation}\label{eq:quartic}
-\int_{F_b}|A_{\bas X}\bas Y|^4\,d\vol_{F_b}\le\int_{F_b}\Ric_g(\xi,\xi)\,d\vol_{F_b}.
+2\int_{F_b}|A_{\bas X}\bas Y|^4\,d\vol_{F_b}\le\int_{F_b}\Ric_g(\xi,\xi)\,d\vol_{F_b}.
 \end{equation}
 \end{theorem}
 
 The identity \eqref{eq:identity} involves neither completeness nor compactness of $M$. Its quantitative form bounds the twisting of the submersion by the vertical Ricci curvature.\footnote{When $M$ is Einstein and $T=0$, $|A|^2$ is constant, so the left side of \eqref{eq:average}, summed over an orthonormal basis $X,Y$ of $T_bB$ and multiplied by $2$, is $|A|^2$ evaluated on horizontal pairs; see Remark~\ref{rem:einstein}.}
 
 \begin{corollary}\label{cor:average}
-In the situation of Theorem~\ref{thm:identity}, let $\rho_b$ be the largest value of $\Ric_g(U,U)$ over the unit vertical vectors $U$ at points of $F_b$. Then for all unit vectors $X,Y\in T_bB$,
+In the situation of Theorem~\ref{thm:identity}, let $\rho_b$ be the largest value of $\Ric_g(U,U)$ over the unit vertical vectors $U$ at points of $F_b$. Then for all orthonormal $X,Y\in T_bB$,
 \begin{equation}\label{eq:average}
-\frac{1}{\vol(F_b)}\int_{F_b}|A_{\bas X}\bas Y|^2\,d\vol_{F_b}\;\le\;\rho_b .
+\frac{1}{\vol(F_b)}\int_{F_b}|A_{\bas X}\bas Y|^2\,d\vol_{F_b}\;\le\;\tfrac12\max\{\rho_b,0\} .
 \end{equation}
+The bound is attained by the Hopf fibration and by the Heisenberg nilmanifold.
 \end{corollary}
 
-For the Hopf fibration of the unit three-sphere both sides of \eqref{eq:average} are attained with $|A_{\bas X}\bas Y|^2=1$ and $\rho_b=2$; for the Heisenberg nilmanifold the left side is $\tfrac14$ and the right side is $\tfrac12$ (Section~\ref{sec:examples}).
+For the Hopf fibration of the unit three-sphere the two sides of \eqref{eq:average} are $|A_{\bas X}\bas Y|^2=1$ and $\tfrac12\rho_b=1$; for the Heisenberg nilmanifold they are $\tfrac14$ and $\tfrac14$ (Section~\ref{sec:examples}). The truncation at $0$ is needed: on a Riemannian product with a fibre of negative Ricci curvature the left side vanishes and $\rho_b<0$.
 
-The consequences for manifolds with special holonomy are immediate. By Yau's solution of the Calabi conjecture \cite{Yau1978} a compact K\"ahler manifold with vanishing first Chern class carries Ricci-flat metrics; the compact manifolds with holonomy $SU(n)$, $Sp(n)$, $G_2$ or $\mathrm{Spin}(7)$ are Ricci-flat, simply connected or finitely covered by simply connected ones, and irreducible \cite{Beauville1983,Joyce2000}.\footnote{These are the Ricci-flat entries of Berger's list \cite{Berger1955}: a simply connected complete irreducible non-symmetric Riemannian manifold has holonomy $SO(m)$, $U(n)$, $SU(n)$, $Sp(n)Sp(1)$, $Sp(n)$, $G_2$ or $\mathrm{Spin}(7)$, and the metric is Ricci-flat exactly in the cases $SU(n)$, $Sp(n)$, $G_2$ and $\mathrm{Spin}(7)$ \cite[Chapter 10]{Besse1987}, \cite[Chapter 3]{Joyce2000}. The holonomy group of the universal cover is the restricted holonomy group of $M$, which is the identity component of the holonomy group of $M$.}
+The consequences for manifolds with special holonomy are immediate. By Yau's solution of the Calabi conjecture \cite{Yau1978} a compact K\"ahler manifold with vanishing first Chern class carries Ricci-flat metrics; the compact manifolds with holonomy $SU(n)$, $Sp(n)$, $G_2$ or $\mathrm{Spin}(7)$ are Ricci-flat, simply connected or finitely covered by simply connected ones, and irreducible \cite{Beauville1983,Joyce2000}.\footnote{Berger's list \cite{Berger1955}: a simply connected complete irreducible non-symmetric Riemannian manifold has holonomy $SO(m)$, $U(n)$, $SU(n)$, $Sp(n)Sp(1)$, $Sp(n)$, $G_2$ or $\mathrm{Spin}(7)$. The groups $SU(n)$, $Sp(n)$, $G_2$ and $\mathrm{Spin}(7)$ force the metric to be Ricci-flat; $U(n)$ and $Sp(n)Sp(1)$ are excluded for a Ricci-flat irreducible metric, since a Ricci-flat K\"ahler metric has restricted holonomy in $SU(n)$ and a quaternion-K\"ahler metric with $Sp(n)Sp(1)$ holonomy has nonzero scalar curvature \cite[Chapter 10 and Chapter 14]{Besse1987}, \cite[Chapter 3]{Joyce2000}. Whether a compact Ricci-flat manifold with holonomy $SO(m)$ exists is not known. Corollary~\ref{cor:ricciflat} assumes irreducible restricted holonomy and does not depend on this. The holonomy group of the universal cover is the restricted holonomy group of $M$, which is the identity component of the holonomy group of $M$.}
 
 \begin{corollary}\label{cor:ricciflat}
 Let $(M,g)$ be a compact Ricci-flat manifold and $\pi\colon M\to B$ a Riemannian submersion with totally geodesic fibres. Then $A=0$, the fibres and the base are Ricci-flat, and $\bas M\cong\bas F\times\bas B$. If the restricted holonomy group of $g$ is irreducible, in particular if $(M,g)$ is a compact Calabi--Yau, hyperk\"ahler, $G_2$ or $\mathrm{Spin}(7)$ manifold with full holonomy, then $M$ admits no Riemannian submersion with totally geodesic fibres onto a manifold $B$ with $0<\dim B<\dim M$.
@@ -154,7 +155,7 @@ In particular $T=0$ if and only if $\lie_{\bas X}g$ vanishes on $\ver\times\ver$
 \end{lemma}
 
 \begin{proof}
-For any vector field $Z$ and vector fields $U,V$ one has $(\lie_Zg)(U,V)=g(\nabla_UZ,V)+g(U,\nabla_VZ)$ (Lemma~\ref{lem:applie}). Taking $Z=\bas X$ with $U,V$ vertical, the vertical part of $\nabla_U\bas X$ is $T_U\bas X$, so $g(\nabla_U\bas X,V)=g(T_U\bas X,V)=-g(\bas X,T_UV)$ by the skew-symmetry of $T_U$, and the same for the second term. Since $T_UV$ is horizontal and the basic fields span $\hor$ at every point, the vanishing of the right side of \eqref{eq:LXg} for all basic $\bas X$ is equivalent to $T=0$.
+For any vector field $Z$ and vector fields $U,V$ one has $(\lie_Zg)(U,V)=g(\nabla_UZ,V)+g(U,\nabla_VZ)$ (Lemma~\ref{lem:applie}). Take $Z=\bas X$ with $U,V$ vertical. The vertical part of $\nabla_U\bas X$ is $T_U\bas X$, so $g(\nabla_U\bas X,V)=g(T_U\bas X,V)=-g(\bas X,T_UV)$ by the skew-symmetry of $T_U$, and the same for the second term. Since $T_UV$ is horizontal and the basic fields span $\hor$ at every point, the vanishing of the right side of \eqref{eq:LXg} for all basic $\bas X$ is equivalent to $T=0$.
 \end{proof}
 
 Lemma~\ref{lem:flow} is the infinitesimal form of Hermann's theorem that the flows of basic fields map fibres isometrically onto fibres when the fibres are totally geodesic \cite{Hermann1960}.\footnote{Hermann proved that a Riemannian submersion with complete total space is a locally trivial fibre bundle, the local trivialisations being given by the flows of basic lifts of coordinate fields, and that when the fibres are totally geodesic these flows are isometries between fibres. We use only the infinitesimal statement \eqref{eq:LXg}, which needs no completeness.} The next lemma is the step on which everything rests.
@@ -180,7 +181,7 @@ Finally, $W$ is tangent to every fibre $F$, and for vector fields $W,U,V$ tangen
 \end{proof}
 
 \begin{remark}
-Lemma~\ref{lem:killing} does not use completeness, compactness, or the dimension of the fibres. On a principal bundle with a connection it reduces to the statement that the curvature takes values in the Lie algebra of the structure group, here a group of isometries of the fibre; the proof above avoids the structure group altogether and applies to every totally geodesic submersion, whether or not it is a bundle in Hermann's sense.\footnote{For a principal $G$-bundle $P\to B$ with a connection, a $G$-invariant metric on $P$ for which the fibres are totally geodesic, and basic fields $\bas X,\bas Y$, the vertical part $v[\bas X,\bas Y]$ is the fundamental vector field of $-\Omega(\bas X,\bas Y)\in\mathfrak g$, where $\Omega$ is the curvature form \cite[Chapter II, Theorem 5.2]{KobayashiNomizu1963}; fundamental fields are Killing for the invariant metric. The lemma says that this Killing property survives without any group action.}
+Lemma~\ref{lem:killing} is not new. For a submersion with totally geodesic fibres the flows of basic fields are isometries between fibres (Hermann \cite{Hermann1960}, \cite{GromollWalschap2009}), so the fibres carry an action of their isometry group by holonomy, and the vertical part of a bracket of basic fields is an infinitesimal isometry; the statement is used in Escobales's classification \cite{Escobales1975}. The proof above is included because it needs only \eqref{eq:LXg} and the derivation rule for Lie derivatives, and because the paper is self-contained. The lemma does not use completeness, compactness, or the dimension of the fibres. On a principal bundle with a connection it reduces to the statement that the curvature takes values in the Lie algebra of the structure group, here a group of isometries of the fibre; the proof above avoids the structure group altogether and applies to every totally geodesic submersion, whether or not it is a bundle in Hermann's sense.\footnote{For a principal $G$-bundle $P\to B$ with a connection, a $G$-invariant metric on $P$ for which the fibres are totally geodesic, and basic fields $\bas X,\bas Y$, the vertical part $v[\bas X,\bas Y]$ is the fundamental vector field of $-\Omega(\bas X,\bas Y)\in\mathfrak g$, where $\Omega$ is the curvature form \cite[Chapter II, Theorem 5.2]{KobayashiNomizu1963}; fundamental fields are Killing for the invariant metric. The lemma says that this Killing property survives without any group action.}
 \end{remark}
 
 \section{Proof of the theorems}\label{sec:proof}
@@ -202,23 +203,24 @@ Fix $b\in B$ and $X,Y\in T_bB$, extend them to vector fields on $B$ and let $\ba
 \end{equation}
 Substituting this into \eqref{eq:bochnerint} gives \eqref{eq:identity}.
 
-For \eqref{eq:quartic} let $|X|=|Y|=1$; then $|\bas X|=|\bas Y|=1$ along $F_b$. At a point $p\in F_b$ choose the orthonormal horizontal basis with $X_1=\bas X_p$. By the skew-symmetry of $A_{\bas X}$,
+For \eqref{eq:quartic} let $X,Y$ be orthonormal; then $\bas X,\bas Y$ are orthonormal along $F_b$, and $n\ge2$. At a point $p\in F_b$ choose the orthonormal horizontal basis with $X_1=\bas X_p$ and $X_2=\bas Y_p$. By the skew-symmetry of $A_{\bas X}$ and of $A_{\bas Y}$, and by $A_{\bas X}\bas Y=-A_{\bas Y}\bas X$,
 \begin{equation}
-|\xi|^2=g(A_{\bas X}\bas Y,\xi)=-g(\bas Y,A_{\bas X}\xi)\le|A_{X_1}\xi|\le\Bigl(\sum_i|A_{X_i}\xi|^2\Bigr)^{1/2},
+|\xi|^2=g(A_{\bas X}\bas Y,\xi)=-g(\bas Y,A_{\bas X}\xi)\le|A_{X_1}\xi|,\qquad
+|\xi|^2=-g(A_{\bas Y}\bas X,\xi)=g(\bas X,A_{\bas Y}\xi)\le|A_{X_2}\xi| ,
 \end{equation}
-so $\sum_i|A_{X_i}\xi|^2\ge|\xi|^4$, and \eqref{eq:quartic} follows from \eqref{eq:identity} by dropping the term $|\nabla^F\xi|^2\ge0$.
+so $\sum_i|A_{X_i}\xi|^2\ge|A_{X_1}\xi|^2+|A_{X_2}\xi|^2\ge2|\xi|^4$, and \eqref{eq:quartic} follows from \eqref{eq:identity} by dropping the term $|\nabla^F\xi|^2\ge0$.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{cor:average}]
-By definition of $\rho_b$, $\Ric_g(\xi,\xi)\le\rho_b|\xi|^2$ on $F_b$. With \eqref{eq:quartic} and the Cauchy--Schwarz inequality,
+If $\int_{F_b}|\xi|^2=0$ the left side of \eqref{eq:average} is $0$ and the inequality holds. Otherwise, by definition of $\rho_b$, $\Ric_g(\xi,\xi)\le\rho_b|\xi|^2$ on $F_b$, and with \eqref{eq:quartic} and the Cauchy--Schwarz inequality,
 \begin{equation}
-\Bigl(\int_{F_b}|\xi|^2\Bigr)^2\le\vol(F_b)\int_{F_b}|\xi|^4\le\vol(F_b)\,\rho_b\int_{F_b}|\xi|^2 .
+\Bigl(\int_{F_b}|\xi|^2\Bigr)^2\le\vol(F_b)\int_{F_b}|\xi|^4\le\tfrac12\vol(F_b)\,\rho_b\int_{F_b}|\xi|^2 ;
 \end{equation}
-If $\int_{F_b}|\xi|^2=0$ there is nothing to prove; otherwise divide by it.
+dividing by $\int_{F_b}|\xi|^2>0$ gives the left side of \eqref{eq:average} $\le\tfrac12\rho_b$, which shows $\rho_b>0$, so $\tfrac12\rho_b=\tfrac12\max\{\rho_b,0\}$. Equality for the two examples is checked in Section~\ref{sec:examples}.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-Let $b\in B$ and let $X,Y\in T_bB$ be unit vectors. By \eqref{eq:hyp} the right side of \eqref{eq:quartic} is nonpositive, so $\int_{F_b}|\xi|^4=0$, and $\xi=A_{\bas X}\bas Y$, which is continuous, vanishes along $F_b$. Since $b$, $X$ and $Y$ were arbitrary and $A$ is bilinear on $\hor\times\hor$, $A$ vanishes on $\hor\times\hor$; by skew-symmetry of $A_X$ it then vanishes on $\hor\times\ver$ as well, so $A=0$.
+If $n=1$ then $A$ vanishes on $\hor\times\hor$ because $A_XX=0$. Let $n\ge2$, $b\in B$, and let $X,Y\in T_bB$ be orthonormal. By \eqref{eq:hyp} the right side of \eqref{eq:quartic} is nonpositive, so $\int_{F_b}|\xi|^4=0$, and $\xi=A_{\bas X}\bas Y$, which is continuous, vanishes along $F_b$. Any two vectors of $T_bB$ are linear combinations of an orthonormal pair, and $A$ is bilinear and alternating on $\hor\times\hor$, so $A$ vanishes on $\hor\times\hor$; by skew-symmetry of $A_X$ it then vanishes on $\hor\times\ver$ as well, so $A=0$.
 
 With $A=T=0$ the connection preserves both distributions: for horizontal $X,Y$ and vertical $U,V$ one has $\nabla_XY=h\nabla_XY+A_XY$, $\nabla_XU=v\nabla_XU+A_XU$, $\nabla_UX=h\nabla_UX+T_UX$ and $\nabla_UV=v\nabla_UV+T_UV$, so $\nabla_EY$ is horizontal and $\nabla_EU$ is vertical for every $E$. Thus $\hor$ and $\ver$ are parallel, hence integrable with totally geodesic leaves, and by the local de Rham theorem \cite{deRham1952}, \cite[Chapter IV, Proposition 5.2]{KobayashiNomizu1963}, $M$ is locally isometric to the product of a leaf of $\ver$, which is an open subset of a fibre, and a leaf of $\hor$.\footnote{The local theorem says: if $TM=\mathcal D_1\oplus\mathcal D_2$ is an orthogonal decomposition into parallel distributions, then every point has a neighbourhood isometric to a product $V_1\times V_2$ with $V_i$ an integral manifold of $\mathcal D_i$. The global theorem adds that a complete simply connected $M$ is isometric to the product of the maximal integral manifolds through any point. A parallel distribution is integrable because $[E,F]=\nabla_EF-\nabla_FE$ stays in it, and its leaves are totally geodesic because $\nabla_EF$ stays in it.} A leaf $L$ of $\hor$ is mapped by $\pi$ locally isometrically onto an open subset of $B$, so $M$ is locally the product of a fibre and an open subset of $B$, with $\pi$ the second projection.
 
@@ -235,6 +237,8 @@ Hypothesis \eqref{eq:hyp} holds since $\lambda\le0$, so $A=0$ and $M$ is locally
 
 \begin{remark}\label{rem:general}
 Hypothesis \eqref{eq:hyp} enters the proof of Theorem~\ref{thm:main} only through the fields $\xi=A_{\bas X}\bas Y$. The conclusion $A=0$ therefore holds under the weaker assumption that $\Ric_g(\xi,\xi)\le0$ on the fibre $F_b$ for every $b$ and all $X,Y\in T_bB$, or even that $\int_{F_b}\Ric_g(\xi,\xi)\le0$ for all these fields. Compactness of $M$ was never used; compactness of the fibres was used in \eqref{eq:bochnerint}, and completeness of $M$ in the global splitting.
+
+The hypothesis is on the Ricci curvature of $g$, not of the fibres. By Lemma~\ref{lem:oneill}(c), $\Ric_g(U,U)\ge\Ric_{g_F}(U,U)$ for vertical $U$, so \eqref{eq:hyp} implies $\Ric_{g_F}\le0$ on every fibre, and the two conditions differ exactly by the term $\sum_i|A_{X_i}U|^2$. If $\Ric_{g_F}$ is negative definite at one point of each fibre, Bochner's theorem alone gives $A=0$: the Killing field $\xi$ is parallel and vanishes at that point, hence everywhere. If only $\Ric_{g_F}\le0$ is assumed, $\xi$ is parallel but need not vanish, and $A$ need not be zero: the Heisenberg nilmanifold of Section~\ref{sec:examples} has flat circle fibres and $A\ne0$. Hypothesis \eqref{eq:hyp} is what rules this out, through the term $\sum_i|A_{X_i}\xi|^2\ge2|\xi|^4$ of \eqref{eq:identity}; it is satisfied by every Ricci-flat and every nonpositively Einstein metric, where the intrinsic condition on the fibres cannot be assumed.
 \end{remark}
 
 \begin{remark}\label{rem:einstein}
@@ -244,7 +248,7 @@ When $(M,g)$ is Einstein and $T=0$, $|A|^2$ is constant on $M$ \cite[p.~250]{Bes
 \section{Examples}\label{sec:examples}
 
 \begin{example}[Hopf fibration]\label{ex:hopf}
-Let $S^3\subset\C^2$ be the unit sphere and $\pi\colon S^3\to S^2(\tfrac12)$ the Hopf fibration onto the sphere of radius $\tfrac12$ \cite{Hopf1931}.\footnote{The map is $(z,w)\mapsto(2z\bar w,\,|z|^2-|w|^2)\in\C\times\R$, whose image is the unit sphere; the metric on the base making $\pi$ a Riemannian submersion has curvature $4$, as O'Neill's formula $K_B(X,Y)=K(X,Y)+3|A_XY|^2=1+3$ for horizontal planes shows \cite[Corollary 1]{ONeill1966}, so the base is the sphere of radius $\tfrac12$. The computations of this example are carried out in Appendix~\ref{app:examples}.} Identify $S^3$ with $SU(2)$ and take the left-invariant orthonormal frame $X,Y,U$ with $[X,Y]=2U$, $[Y,U]=2X$, $[U,X]=2Y$; the fibres are the orbits of $U$, which are great circles, and $X,Y$ are basic. Then $\xi=A_{X}Y=\tfrac12v[X,Y]=U$ is a unit Killing field on each fibre, $\nabla^F\xi=0$, $\Ric_g(\xi,\xi)=2$, and $|A_XU|^2=|A_YU|^2=K(X,U)=1$. Identity \eqref{eq:identity} reads $2=0+2$, and \eqref{eq:average} reads $1\le2$.
+Let $S^3\subset\C^2$ be the unit sphere and $\pi\colon S^3\to S^2(\tfrac12)$ the Hopf fibration onto the sphere of radius $\tfrac12$ \cite{Hopf1931}.\footnote{The map is $(z,w)\mapsto(2z\bar w,\,|z|^2-|w|^2)\in\C\times\R$, whose image is the unit sphere; the metric on the base making $\pi$ a Riemannian submersion has curvature $4$, as O'Neill's formula $K_B(X,Y)=K(X,Y)+3|A_XY|^2=1+3$ for horizontal planes shows \cite[Corollary 1]{ONeill1966}, so the base is the sphere of radius $\tfrac12$. The computations of this example are carried out in Appendix~\ref{app:examples}.} Identify $S^3$ with $SU(2)$ and take the left-invariant orthonormal frame $X,Y,U$ with $[X,Y]=2U$, $[Y,U]=2X$, $[U,X]=2Y$; the fibres are the orbits of $U$, which are great circles, and $X,Y$ are basic. Then $\xi=A_{X}Y=\tfrac12v[X,Y]=U$ is a unit Killing field on each fibre, $\nabla^F\xi=0$, $\Ric_g(\xi,\xi)=2$, and $|A_XU|^2=|A_YU|^2=K(X,U)=1$. Identity \eqref{eq:identity} reads $2=0+2$, inequality \eqref{eq:quartic} reads $2\le2$, and \eqref{eq:average} reads $1\le1$: both are equalities.
 \end{example}
 
 \begin{figure}[htbp]
@@ -259,7 +263,7 @@ Let $H$ be the three-dimensional Heisenberg group with the left-invariant metric
 \begin{equation}\label{eq:heis}
 \Ric(e_1,e_1)=\Ric(e_2,e_2)=-\tfrac12,\quad\Ric(e_3,e_3)=\tfrac12,\quad \scal=-\tfrac12,\quad K(e_1,e_3)=K(e_2,e_3)=\tfrac14 .
 \end{equation}\footnote{The Heisenberg group is the group of upper triangular $3\times3$ matrices with unit diagonal, and $\Gamma$ can be taken to be the subgroup of integer matrices. The nilmanifold $\Gamma\backslash H$ is a circle bundle over the torus of Euler number one; Milnor \cite{Milnor1976} computed its curvature as the simplest example of a left-invariant metric whose Ricci curvature has both signs; here it is positive exactly on the fibre direction.}
-Here $\xi=A_{e_1}e_2=\tfrac12e_3$, so $|\xi|^2=\tfrac14$, $\Ric(\xi,\xi)=\tfrac18$ and $\sum_i|A_{e_i}\xi|^2=\tfrac14\bigl(K(e_1,e_3)+K(e_2,e_3)\bigr)=\tfrac18$; identity \eqref{eq:identity} reads $\tfrac18=0+\tfrac18$, and \eqref{eq:average} reads $\tfrac14\le\tfrac12$. The Ricci curvature is negative on every horizontal vector and the scalar curvature is negative, yet $A\neq0$: the sign condition of Theorem~\ref{thm:main} must be imposed on the vertical directions, and it cannot be replaced by a condition on the scalar curvature.
+Here $\xi=A_{e_1}e_2=\tfrac12e_3$, so $|\xi|^2=\tfrac14$, $\Ric(\xi,\xi)=\tfrac18$ and $\sum_i|A_{e_i}\xi|^2=\tfrac14\bigl(K(e_1,e_3)+K(e_2,e_3)\bigr)=\tfrac18$; identity \eqref{eq:identity} reads $\tfrac18=0+\tfrac18$, inequality \eqref{eq:quartic} reads $2\cdot\tfrac1{16}\le\tfrac18$, and \eqref{eq:average} reads $\tfrac14\le\tfrac12\cdot\tfrac12$: again both are equalities. The Ricci curvature is negative on every horizontal vector and the scalar curvature is negative, yet $A\neq0$: the sign condition of Theorem~\ref{thm:main} must be imposed on the vertical directions, and it cannot be replaced by a condition on the scalar curvature.
 \end{example}
 
 \begin{example}[Products]
